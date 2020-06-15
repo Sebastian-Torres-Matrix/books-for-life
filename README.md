@@ -1,39 +1,101 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# BOOKS FOR LIFE
+![Multi Device Website Mockup]()
+Visit the live website: [Books For Life]()
 
-Welcome Sebastian Torres,
+## Introduction 
+Welcome to Books For Life!
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+## Table of Contents
+* [UX](#ux)
+    * [Project Goals](#project-goals)
+    * [User Stories](#user-stories)
+    * [Design Choices](#design-choices)
+    * [Wireframes](#wireframes)
+* [Features](#features)
+    * [Existing Features](#existing-features)
+    * [Features Left to Implement](#features-left-to-implement)
+* [Technologies Used](#technologies-used)
+    * [Tools](#tools)
 
-## Gitpod Reminders
+* [Testing](#testing)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+* [Deployment](#deployment)
 
-`python3 -m http.server`
+* [Credits](#credits)
+    * [Content](#content)
+    * [Media](#media)
+    * [Acknowledgements](#acknowledgements)
 
-A blue button should appear to click: *Make Public*,
+* [Disclaimer](#disclaimer)
 
-Another blue button should appear to click: *Open Browser*.
+## UX 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+#### Project Goals :dart: 
 
-A blue button should appear to click: *Make Public*,
 
-Another blue button should appear to click: *Open Browser*.
+#### User Stories :clapper: 
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+#### Design Choices :art:
 
-## Updates Since The Instructional Video
+* __Icons__
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
+* __Colors__
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+* __Backgrounds__
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+* __Videos__
+   
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+#### Wireframes
+* The wireframes were created using [Balsamiq](https://balsamiq.com/).
+    * Here is the link to see the [Wireframes]()
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## Features :mag_right:
 
---------
+#### Existing Features
 
-Happy coding!
+
+#### Features Left to Implement
+
+
+## Technologies Used :computer: 
+
+#### Languages
+* HTML
+* CSS 
+* JavaScript 
+* Python
+
+#### Libaries & Frameworks
+* [Bootstrap](https://getbootstrap.com/) 
+* [FontAwesome](https://fontawesome.com/)  
+* [JQuery](https://jquery.com/) 
+
+#### Tools :wrench:
+* [Balsamiq](https://balsamiq.com/) 
+* [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) 
+* [Git](https://git-scm.com/) 
+* [Github](https://github.com/) 
+* [Gitpod](https://www.gitpod.io/) 
+* [Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/) 
+
+## Testing :electric_plug:
+
+## Deployment
+
+## Credits 
+
+#### Content
+
+    
+#### Media
+
+
+#### Acknowledgements
+
+ 
+## Disclaimer 
+* The content of this website is for educational purpose only. :heavy_exclamation_mark:
+
+## Back to the top 
+* [Table of Contents](#table-of-contents) :arrow_up:
