@@ -77,8 +77,8 @@ username | String
 email | String
 
 Reviews Collection
-Title | ID | Data Type
------------- | ------------- | -------------
+ID | Data Type
+------------ | -------------
 _id | Int
 title | String
 author | String
@@ -92,7 +92,14 @@ downvote_total | Int
 ## Features :mag_right:
 
 #### Existing Features
-
+* Users can create a personal account, with a unique username to login, add books and leave book reviews
+* Users can delete their profile account if they wish to do so
+* Users can sign in and also sign out
+* Users can add books on the website
+* Users can add, edit and delete book reviews
+* Users can save favorite books to their personal account
+* Users can choose book gallery based on genre
+* Users can buy books through link to Amazon
 
 #### Features Left to Implement
 
