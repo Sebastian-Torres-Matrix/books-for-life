@@ -31,24 +31,63 @@ Welcome to Books For Life!
 ## UX 
 
 #### Project Goals :dart: 
+The aim of the project is to create a book website where users can search and find books that they want to read, 
+books that they already have read and want to give a review or save as a favorite on their personal account,
+also the user can buy the book through an affiliate link.
 
+#### Site Owner Goals:
+* Provide a platform for book lovers to find books they like
+* Earn money on each book purchased via a affiliate link from the website.
+* Collect user information through site analytics to optimize the website for users
 
 #### User Stories :clapper: 
+* I want to be able to create a personal account
+* I want to be able to delete my personal account
+* I want to be able to save my favorite books on my personal account
+* I want to be able to see book reviews from other users
+* I want to see how popular the book is, through thumbs up or thumbs down
+* I want to be able to search books by genre
+* I want to see the book title, cover of the book and the author name
+* I want to be able to buy the book by using a link that takes my to a book shop
+* I want to be able to delete or edit my reviews
+* I want to be able to sign out
+* I want the website to responsive on my laptop, iPad and mobile phone
+
 
 #### Design Choices :art:
 
 * __Icons__
+Are being applied from Font Awesome. That has a large collection to choose from. 
 
 * __Colors__
-
-* __Backgrounds__
-
-* __Videos__
-   
+* Wheat colour: #E8D0A9
+* White colour: #FFF
 
 #### Wireframes
 * The wireframes were created using [Balsamiq](https://balsamiq.com/).
     * Here is the link to see the [Wireframes]()
+
+#### Databases
+
+Users Collection
+ID | Data Type
+------------- | -------------
+_id | Int
+username | String
+email | String
+
+Reviews Collection
+Title | ID | Data Type
+------------ | ------------- | -------------
+_id | Int
+title | String
+author | String
+genre | String
+upvote | Array
+downvote | Array
+upvote_total | Int
+downvote_total | Int
+
 
 ## Features :mag_right:
 
@@ -67,9 +106,13 @@ Welcome to Books For Life!
 * Python
 
 #### Libaries & Frameworks
+* [Flask](https://flask.palletsprojects.com/en/1.1.x/ ) 
 * [Bootstrap](https://getbootstrap.com/) 
 * [FontAwesome](https://fontawesome.com/)  
 * [JQuery](https://jquery.com/) 
+
+#### Databases
+* [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
 
 #### Tools :wrench:
 * [Balsamiq](https://balsamiq.com/) 
@@ -77,6 +120,8 @@ Welcome to Books For Life!
 * [Git](https://git-scm.com/) 
 * [Github](https://github.com/) 
 * [Gitpod](https://www.gitpod.io/) 
+* [Google Fonts](https://fonts.google.com/)
+* [Heroku](https://dashboard.heroku.com/apps)
 * [Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/) 
 
 ## Testing :electric_plug:
