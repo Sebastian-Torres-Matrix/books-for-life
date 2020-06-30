@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    {% for review in reviews%}
+        {{review.title_name}}
+        {{review.author_name}}
+        {{review.genre_name}}
+    {% endfor %}
+
+
+{% endblock %}

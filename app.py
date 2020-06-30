@@ -11,8 +11,9 @@ app.config["MONGO_URI"] = 'mongodb+srv://root:<password>@myfirstcluster-x0xst.mo
 mongo = PyMongo(app)
 
 @app.route('/')
-def hello():
-    return render_template("tasks.html", tasks=mongo.db.tasks.find())
+@app.route('/get_reviews')
+def get_tasks():
+    return render_template("reviews.html", reviews=mongo.db.reviews.find())
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
