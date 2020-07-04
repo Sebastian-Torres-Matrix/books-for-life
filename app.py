@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, flash, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from forms import LoginForm, RegistrationForm
 
 app = Flask(__name__)
 
