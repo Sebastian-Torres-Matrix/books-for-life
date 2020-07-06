@@ -28,24 +28,27 @@ def book_gallery():
 
 @app.route('/get_users')
 def get_users():
-    return render_template("tasks.html", users=mongo.db.users.find())
+    return render_template("users.html", users=mongo.db.users.find())
 
 @app.route('/add_book')
 def add_book():
     return render_template("addbook.html")
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template("login.html")
+    form = LoginForm()
+    # return redirect(url_for('book_gallery'))
+    return render_template("login.html", form=form)
 
 @app.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('landing_page'))
 
-@app.route('/signup')
+@app.route('/signup', methods=['GET', 'POST'])
 def signup():
-    return render_template("signup.html")
+    # return redirect(url_for('book_gallery'))
+    return render_template("signup.html", form=form)
 
 @app.route('/personal_account')
 def personal_account():
