@@ -1,51 +1,51 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %} {% for review in reviews%}
+{{review.title_name}}<br />
+{{review.author_name}}<br />
+{{review.genre_name}}<br />
+{% endfor %}
 
-    {% for review in reviews%}
-        {{review.title_name}}<br>
-        {{review.author_name}}<br>
-        {{review.genre_name}}<br>
-    {% endfor %}
-
-  <div class="row">
-    <div class="col s12 m6">
-      <div class="card">
-        <div class="card-image">
-          <img src="images/sample-1.jpg">
-          <span class="card-title">Card Title</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">favorite_border</i></a>
-        </div>
-        <div class="card-content">
-          <p>Lorem Ipsum</p>
-        </div>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-image">
+        <img src="images/sample-1.jpg" />
+        <span class="card-title">Card Title</span>
+        <a class="btn-floating halfway-fab waves-effect waves-light red"
+          ><i class="material-icons">favorite_border</i></a
+        >
+      </div>
+      <div class="card-content">
+        <p>Lorem Ipsum</p>
       </div>
     </div>
   </div>
+</div>
 
-        <div class="input-field col s12 m6">
-        <i class="material-icons prefix">sentiment_very_satisfied</i>
-        <label for="first_name">Title: </label>
-          <input name="username" id="username" type="text" class="validate">
-        </div>
-       
-        <div class="input-field">
-        <i class="material-icons prefix">sentiment_very_satisfied</i>
-        <label for="first_name">Author: </label>
-          <input name="author" id="author" type="text" class="validate">
-          
-        </div>
-      
+<div class="input-field col s12 m6">
+  <i class="material-icons prefix">sentiment_very_satisfied</i>
+  <label for="first_name">Title: </label>
+  <input name="username" id="username" type="text" class="validate" />
+</div>
 
-          <div class="row">
-      <form class="col s12">
-        <div class="row">
-        <label for="reviews">Reviews</label>
-          <div class="input-field col s12">
-            <textarea id="reviews" class="materialize-textarea" data-length="120"></textarea>
-            
-          </div>
-        </div>
-      </form>
+<div class="input-field">
+  <i class="material-icons prefix">sentiment_very_satisfied</i>
+  <label for="first_name">Author: </label>
+  <input name="author" id="author" type="text" class="validate" />
+</div>
+
+<div class="row">
+  <form class="col s12">
+    <div class="row">
+      <label for="reviews">Reviews</label>
+      <div class="input-field col s12">
+        <textarea
+          id="reviews"
+          class="materialize-textarea"
+          data-length="120"
+        ></textarea>
+      </div>
     </div>
+  </form>
+</div>
 
 {% endblock %}

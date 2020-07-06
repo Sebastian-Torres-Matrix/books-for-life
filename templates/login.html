@@ -1,33 +1,35 @@
-{% extends 'base.html' %}
-{% block content %}
- <div class="row">
-    <form class="col s12" method="POST" action="/login">
+{% extends 'base.html' %} {% block content %}
+<div class="row">
+  <form class="col s12" method="POST" action="/login">
     {{ form.hidden_tag() }}
 
-      <div class="row">
-        <div class="input-field col s12">
+    <div class="row">
+      <div class="input-field col s12">
         <i class="material-icons prefix">sentiment_very_satisfied</i>
         {{ form.username.label }} {{ form.username(size=32) }}
-        </div>
       </div>
+    </div>
 
     <div class="row">
-        <div class="input-field col s12">
+      <div class="input-field col s12">
         {{ form.password.label }} {{ form.password(size=32) }}
-          
-        </div>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-      {{ form.remember_me() }} {{ form.remember_me.label }}
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        {{ form.remember_me() }} {{ form.remember_me.label }}
       </div>
-      </div>
-          
-      <div>
-      <button class="btn-large waves-effect waves-light">{{ form.submit() }}</button>
-      </div>
+    </div>
 
-    </form>
-  </div>
+    <div>
+      <button class="btn-large waves-effect waves-light">
+        {{ form.submit() }}
+      </button>
+    </div>
+    <div>
+      <span>Not a member yet?<a href="{{ url_for('signup')}}">Sign up here</a></span>
+    </div>
+  </form>
+</div>
 
 {% endblock %}

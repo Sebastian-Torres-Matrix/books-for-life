@@ -1,35 +1,39 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
+
+<div>
+  <h3>BOOK GALLERY</h3>
+  <p>All Books</p>
+</div>
 
 <!--Search Bar-->
-  <div class="row">
-    <div class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">textsms</i>
-          <input type="text" id="autocomplete-input" class="autocomplete">
-          <label for="autocomplete-input">Search Book</label>
-        </div>
+<div class="row">
+  <div class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">textsms</i>
+        <input type="text" id="autocomplete-input" class="autocomplete" />
+        <label for="autocomplete-input">Search Book</label>
       </div>
     </div>
   </div>
+</div>
 
 <!--Cards-->
-  <div class="row">
-    <div class="col s12 m6">
-      <div class="card">
-        <div class="card-image">
-          <img src="#">
-          <span class="card-title card-action"><a href="#">Title</a></span>
-        </div>
-        <div class="card-content">
-          <p>Content Card</p>
-        </div>
-            <div class="card-action">
-          <a href="#">Upvote</a>
-        </div>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-image">
+        <img src="#" />
+        <span class="card-title card-action"><a href="#">Book Title</a></span>
+      </div>
+      <div class="card-content">
+        <p>Author</p>
+      </div>
+      <div class="card-action">
+        <a href="#">Upvote</a>
       </div>
     </div>
   </div>
+</div>
 
 {% endblock %}

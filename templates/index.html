@@ -1,17 +1,20 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <div>
-	<h1>Welcome to Books for Life</h1>
+  <h1>Welcome to Books for Life</h1>
 </div>
 
 <div class="row">
-	<div>
-		<button class="btn-large waves-effect waves-light" type="submit" name="action">Sign In</button>
-	</div>
-	<div>
-		<span>Not a member yet?<a href="#">Sign up here</a></span>
-	</div>
+  <div>
+    <a class="btn-large waves-effect waves-light" href="{{ url_for('login')}}"
+      >Sign In</a
+    >
+  </div>
+  <div>
+    <span
+      >Not a member yet?<a href="{{ url_for('signup')}}">Sign up here</a></span
+    >
+  </div>
 </div>
 
 {% endblock %}

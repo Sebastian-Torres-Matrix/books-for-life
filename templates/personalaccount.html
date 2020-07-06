@@ -1,35 +1,33 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
-  <div class="row">
-    <form class="col s12">
+<div>
+  <h3>Personal Account</h3>
+</div>
 
-
-      <div class="row">
-        <div class="input-field col s12">
+<div class="row">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
         <i class="material-icons prefix">sentiment_very_satisfied</i>
         {{ form.username.label }} {{ form.username(size=32) }}
-        </div>
       </div>
+    </div>
 
-
-       <div class="row">
-        <div class="input-field col s12">
+    <div class="row">
+      <div class="input-field col s12">
         <i class="material-icons prefix">sentiment_very_satisfied</i>
         <label for="first_name">Email: </label>
-          <input name="author" id="author" type="text" class="validate">
-          
-        </div>
+        <input name="author" id="author" type="text" class="validate" />
       </div>
+    </div>
 
-
-            <div class="row">
-        <div class="input-field col s12">
+    <div class="row">
+      <div class="input-field col s12">
         <i class="material-icons prefix">sentiment_very_satisfied</i>
         <label for="first_name">Favorites: </label>
-          <input name="username" id="username" type="text" class="validate">
-          
-        </div>
+        <input name="username" id="username" type="text" class="validate" />
       </div>
-
+    </div>
+  </form>
+</div>
 {% endblock %}
