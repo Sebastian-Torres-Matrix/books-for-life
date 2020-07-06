@@ -4,12 +4,17 @@ from flask import (
     redirect, request, url_for, session)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+"""
 from forms import LoginForm, RegistrationForm
-from flask_login import LoginManager, current_user, login_user, logout_user, login_required
+from flask_login import (
+    LoginManager, current_user, login_user,
+    logout_user, login_required)
 from werkzeug.security import generate_password_hash, check_password_hash
+"""
 from os import path
 if os.path.exists("env.py"):
-  import env 
+    import env 
+
 
 app = Flask(__name__)
 
@@ -19,12 +24,11 @@ app.secret_key = os.environ.get('SECRET_KEY')
 
 mongo = PyMongo(app)
 
-'''
+
 def hello():
     return "Hello world"
-'''
 
-@app.route('/')
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -32,7 +36,7 @@ def login():
         return render_template("login.html", title='Sign In', form=form)
         # return redirect(url_for('book_gallery'))
 
-
+@app.route('/')
 @app.route('/landing_page')
 def landing_page():
     return render_template("index.html")
@@ -88,3 +92,4 @@ if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
     port=int(os.environ.get('PORT')),
     debug=True)
+

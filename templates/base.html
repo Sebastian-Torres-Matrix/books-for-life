@@ -4,7 +4,7 @@
 <head>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Books For Life</title>
@@ -15,7 +15,7 @@
 	<header>
 		<nav>
 			<div class="nav-wrapper">
-				<a href="bookgallery.html" class="brand-logo">Books For Life</a>
+				<a href="{{url_for('landing_page')}}" class="brand-logo">Books For Life</a>
 				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
 					<li><a href="{{url_for('book_gallery')}}">Book Gallery</a></li>
