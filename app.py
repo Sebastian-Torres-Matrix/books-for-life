@@ -3,17 +3,34 @@ from flask import Flask, render_template, flash, redirect, request, url_for, ses
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from forms import LoginForm, RegistrationForm
+from flask_login import LoginManager, current_user, login_user, logout_user, login_required
+from werkzeug.security import generate_password_hash, check_password_hash
+from os import path
+if os.path.exists("env.py"):
+  import env 
 
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = 'book_manager'
-#app.config["MONGO_URI"] = 'mongodb+srv://root:r00tUser@myfirstcluster-x0xst.mongodb.net/book_manager?retryWrites=true&w=majority'
 app.config['MONGO_URI'] = os.getenv('MONGO_URI')
 app.secret_key = os.getenv('SECRET_KEY')
 
 mongo = PyMongo(app)
 
 @app.route('/')
+def hello():
+    return "Hello world"
+
+    
+
+'''
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+    # return redirect(url_for('book_gallery'))
+    return render_template("login.html", title='Sign In', form=form)
+
 @app.route('/landing_page')
 def landing_page():
     return render_template("index.html")
@@ -34,12 +51,6 @@ def get_users():
 def add_book():
     return render_template("addbook.html")
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    form = LoginForm()
-    # return redirect(url_for('book_gallery'))
-    return render_template("login.html", form=form)
-
 @app.route('/logout')
 def logout():
     logout_user()
@@ -47,6 +58,8 @@ def logout():
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
+    form = RegisterForm()
+    if form.validate_on_submit():
     # return redirect(url_for('book_gallery'))
     return render_template("signup.html", form=form)
 
@@ -57,8 +70,9 @@ def personal_account():
 @app.route('/reviews')
 def reviews():
     return render_template("reviews.html")
+'''
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
-    port=(os.environ.get('PORT')),
+    port=int(os.environ.get('PORT')),
     debug=True)
