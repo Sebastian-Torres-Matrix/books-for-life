@@ -24,10 +24,10 @@ app.secret_key = os.environ.get('SECRET_KEY')
 
 mongo = PyMongo(app)
 
-
-def hello():
-    return "Hello world"
-
+@app.route('/')
+@app.route('/index')
+def index():
+    return render_template("index.html")
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -36,31 +36,35 @@ def login():
         return render_template("login.html", title='Sign In', form=form)
         # return redirect(url_for('book_gallery'))
 
-@app.route('/')
-@app.route('/landing_page')
-def landing_page():
-    return render_template("index.html")
 
-
-@app.route('/get_reviews')
-def get_reviews():
+@app.route('/reviews')
+def reviews():
     reviews = mongo.db.reviews.find()
     return render_template("reviews.html", reviews=reviews)
 
 
-@app.route('/book_gallery')
-def book_gallery():
+@app.route('/gallery')
+def gallery():
     return render_template("bookgallery.html")
 
 
-@app.route('/get_users')
-def get_users():
+@app.route('/users')
+def users():
     users = mongo.db.users.find()
     return render_template("users.html", users=users)
 
 
-@app.route('/add_book')
+@app.route('/book')
+def book():
+    return render_template("addbook.html")
+@app.route('/book/add')
 def add_book():
+    return render_template("addbook.html")
+@app.route('/book/edit/<book_id>')
+def edit_book(book_id):
+    return render_template("addbook.html", book=book_id)
+@app.route('/book/delete/<book_id>')
+def delete_book(book_id):
     return render_template("addbook.html")
 
 
@@ -78,14 +82,9 @@ def signup():
         # return redirect(url_for('book_gallery'))
 
 
-@app.route('/personal_account')
-def personal_account():
+@app.route('/account')
+def account():
     return render_template("personalaccount.html")
-
-
-@app.route('/reviews')
-def reviews():
-    return render_template("reviews.html")
 
 
 if __name__ == '__main__':
