@@ -1,7 +1,5 @@
 import os
-from flask import (
-    Flask, render_template, flash,
-    redirect, request, url_for, session)
+from flask import Flask, render_template, flash, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 """
@@ -72,7 +70,6 @@ def delete_book(book_id):
 def logout():
     logout_user()
     return redirect(url_for('landing_page'))
-
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
