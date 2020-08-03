@@ -31,9 +31,11 @@ def index():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
+        flash('You have been logged in!', 'success')
+        return redirect(url_for('gallery'))
+    else:
+        flash('Login unsuccessful. Please try again', 'danger')
         return render_template("login.html", title='Sign In', form=form)
-        # return redirect(url_for('book_gallery'))
-
 
 @app.route('/reviews')
 def reviews():
@@ -55,27 +57,32 @@ def users():
 @app.route('/book')
 def book():
     return render_template("addbook.html")
+
 @app.route('/book/add')
 def add_book():
-    return render_template("addbook.html")
+    return render_template("bookgallery.html")
+
 @app.route('/book/edit/<book_id>')
 def edit_book(book_id):
     return render_template("addbook.html", book=book_id)
+
 @app.route('/book/delete/<book_id>')
 def delete_book(book_id):
-    return render_template("addbook.html")
-
+    mongo.db.books.remove({'_id': ObjectId(book_id)})
+    flash(('The book has been successfully deleted').format(book_id), 'success')
+    return render_template("bookgallery.html")
 
 @app.route('/logout')
 def logout():
     logout_user()
+    flash('You have been successfully logged out!', 'success')
     return redirect(url_for('landing_page'))
 
-@app.route('/signup', methods=['GET', 'POST'])
+@app.route('/signup') #, methods=['GET', 'POST'])
 def signup():
-    form = RegisterForm()
-    if form.validate_on_submit():
-        return render_template("signup.html", form=form)
+    #form = RegisterForm()
+    #if form.validate_on_submit():
+        return render_template("signup.html") #, form=form)
         # return redirect(url_for('book_gallery'))
 
 

@@ -11,3 +11,12 @@ html {
     min-height: 100vh;
      background-color: #ffffff;
   }
+
+  .btn-large {
+      margin: auto;
+  }
+
+  .signup-form {
+    border:  border: 2px solid black;
+    border-radius: 5px;
+  }
