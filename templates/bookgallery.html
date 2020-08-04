@@ -1,8 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 
+<div class="container">
 <div>
   <h3>BOOK GALLERY</h3>
-  <p>All Books</p>
 </div>
 
 <!--Search Bar-->
@@ -23,11 +23,11 @@
   <div class="col s12 m6">
     <div class="card">
       <div class="card-image">
-        <img src="#" />
-        <span class="card-title card-action"><a href="#">Book Title</a></span>
+        <img src="{{ book.cover_url }}" />
+        <span class="card-title card-action"><a href="#">{{ book.title }}</a></span>
       </div>
       <div class="card-content">
-        <p>Author</p>
+        <p>{{ book.author }}</p>
       </div>
       <div class="card-action">
         <span><a href="#"><i class="material-icons">edit</i></a></span> 
@@ -36,5 +36,5 @@
     </div>
   </div>
 </div>
-
+</div>
 {% endblock %}

@@ -1,24 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
   
+    <div class="container">
     <div>
-        <h3>Add Book {{book}}</h3>
+        <h3 class="form-heading">Add Book</h3>
     </div>
 
-    <form class="col s12">
+     <form class="col s12" action="{{ url_for('add_book') }}" method="POST">
       <div class="row">
         <div class="input-field col s12">
-        <i class="material-icons prefix">sentiment_very_satisfied</i>
-        <label for="first_name">Title: </label>
-          <input name="username" id="username" type="text" class="validate">
+        <i class="material-icons prefix">create</i>
+        <label for="title">Title: </label>
+          <input name="title" id="title" type="text" class="validate">
           
         </div>
       </div>
 
        <div class="row">
         <div class="input-field col s12">
-        <i class="material-icons prefix">sentiment_very_satisfied</i>
-        <label for="first_name">Author: </label>
+        <i class="material-icons prefix">person</i>
+        <label for="author">Author: </label>
           <input name="author" id="author" type="text" class="validate">
           
         </div>
@@ -26,26 +27,26 @@
 
             <div class="row">
         <div class="input-field col s12">
-        <i class="material-icons prefix">genre</i>
-        <label for="first_name">Genre: </label>
+        <i class="material-icons prefix">collections</i>
+        <label for="genre">Genre: </label>
           <input name="genre" id="genre" type="text" class="validate">
           
         </div>
       </div>
 
             <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix">sentiment_very_satisfied</i>
-        <label for="first_name">Link To Book Cover Image: </label>
-          <input name="username" id="username" type="text" class="validate">
+        <div class="input-field col s12 ">
+        <i class="material-icons prefix">link</i>
+        <label for="cover_url">Link To Book Cover Image: </label>
+          <input name="cover_url" id="cover_url" type="text" class="validate">
         </div>
       </div>
 
             <div class="row">
         <div class="input-field col s12">
-        <i class="material-icons prefix">sentiment_very_satisfied</i>
-        <label for="first_name">Link to URL at Amazon: </label>
-          <input name="username" id="username" type="text" class="validate">          
+        <i class="material-icons prefix">link</i>
+        <label for="amazon_url">Link to URL at Amazon: </label>
+          <input name="amazon_url" id="amazon_url" type="text" class="validate">          
         </div>
       </div>
 
@@ -53,5 +54,5 @@
       <button class="btn-large waves-effect waves-light" type="submit" name="action">Done</button>
       </div>
     </form>
-
+</div>
 {% endblock %}

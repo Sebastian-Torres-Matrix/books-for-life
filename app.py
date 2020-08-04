@@ -2,12 +2,12 @@ import os
 from flask import Flask, render_template, flash, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 """
 from forms import LoginForm, RegistrationForm
 from flask_login import (
     LoginManager, current_user, login_user,
     logout_user, login_required)
-from werkzeug.security import generate_password_hash, check_password_hash
 """
 from os import path
 if os.path.exists("env.py"):
@@ -58,7 +58,7 @@ def users():
 def book():
     return render_template("addbook.html")
 
-@app.route('/book/add')
+@app.route('/add_book')
 def add_book():
     return render_template("bookgallery.html")
 
@@ -81,7 +81,7 @@ def update_task(book_id):
     })
     return redirect(url_for('book'))
 
-@app.route('/book/delete/<book_id>')
+@app.route('/delete_book/<book_id>')
 def delete_book(book_id):
     mongo.db.books.remove({'_id': ObjectId(book_id)})
     flash(('The book has been successfully deleted').format(book_id), 'success')
