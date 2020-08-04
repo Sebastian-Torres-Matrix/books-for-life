@@ -62,9 +62,24 @@ def book():
 def add_book():
     return render_template("bookgallery.html")
 
-@app.route('/book/edit/<book_id>')
+@app.route('/edit_book/<book_id>')
 def edit_book(book_id):
-    return render_template("addbook.html", book=book_id)
+    the_book =  mongo.db.tasks.find_one({"_id": ObjectId(book_id)})
+    all_categories =  mongo.db.categories.find()
+    return render_template("addbook.html", book=the_book, categories=all_categories)
+
+@app.route('/update_book/<book_id>', methods=["POST"])
+def update_task(book_id):
+    books =  mongo.db.books
+    books.update( {'_id': ObjectId(book_id)},
+    {
+        'title':request.form.get('title'),
+        'author':request.form.get('author'),
+        'description': request.form.get('description'),
+        'cover_url': request.form.get('cover_url'),
+        'amazon_url':request.form.get('amazon_url')
+    })
+    return redirect(url_for('book'))
 
 @app.route('/book/delete/<book_id>')
 def delete_book(book_id):
