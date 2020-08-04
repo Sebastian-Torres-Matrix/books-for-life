@@ -11,6 +11,7 @@
     });
   });
 
+  
   // Reviews textarea
     $(document).ready(function() {
     $('textarea#reviews').characterCounter();

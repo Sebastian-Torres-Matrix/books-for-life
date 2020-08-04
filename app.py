@@ -10,8 +10,8 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = 'book_manager'  #os.environ.get("MONGO_DBNAME")
-app.config['MONGO_URI'] = os.environ['MONGO_URI']    #os.environ.get('MONGO_URI')
+app.config["MONGO_DBNAME"] = 'book_manager' 
+app.config['MONGO_URI'] = os.environ['MONGO_URI']  
 app.secret_key = os.environ.get('SECRET_KEY')
 
 mongo = PyMongo(app)
@@ -21,20 +21,6 @@ mongo = PyMongo(app)
 @app.route('/index')
 def index():
     return render_template("index.html")
-
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-        username = request.form.get('username')
-        password = request.form.get("password")
-        reg_user = find_user(username)
-        if reg_user and check_password_hash(reg_user["password"], password):
-        #flash('You have been logged in!', 'success')
-         session["user"] = username
-        return redirect(url_for('gallery', username=session["user"]))
-   # else:
-       # flash('Login unsuccessful. Please try again', 'danger')
-        return render_template("login.html", title='Sign In', form=form)
 
 
 @app.route('/reviews')
@@ -47,13 +33,6 @@ def reviews():
 def gallery():
     return render_template("bookgallery.html", reviews=mongo.db.reviews.find())
 
-
-@app.route('/users')
-def users():
-    users = mongo.db.users.find()
-    return render_template("users.html", users=users)
-
-
 @app.route('/book')
 def book():
     return render_template("addbook.html")
@@ -61,22 +40,22 @@ def book():
 
 @app.route('/add_book')
 def add_book():
-    return render_template("bookgallery.html")
+    return redirect(url_for('gallery'))
 
 
 @app.route('/edit_book/<book_id>')
 def edit_book(book_id):
-    the_book = mongo.db.tasks.find_one({"_id": ObjectId(book_id)})
-    all_categories = mongo.db.categories.find()
+    the_book = mongo.db.reviews.find_one({"_id": ObjectId(book_id)})
+    all_reviews = mongo.db.reviews.find()
     return render_template("addbook.html",
                            book=the_book,
-                           categories=all_categories)
+                           reviews=all_reviews)
 
 
 @app.route('/update_book/<book_id>', methods=["POST"])
 def update_task(book_id):
-    books = mongo.db.books
-    books.update({'_id': ObjectId(book_id)},
+    reviews = mongo.db.reviews
+    reviews.update({'_id': ObjectId(book_id)},
                  {
                      'title': request.form.get('title'),
                      'author': request.form.get('author'),
@@ -95,12 +74,23 @@ def delete_book(book_id):
     return render_template("bookgallery.html")
 
 
-@app.route('/logout')
-def logout():
-    logout_user()
-    flash('You have been successfully logged out!', 'success')
-    return redirect(url_for('landing_page'))
+@app.route('/users')
+def users():
+    users = mongo.db.users.find()
+    return render_template("users.html", users=users)
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+        username = request.form.get('username')
+        password = request.form.get("password")
+        reg_user = find_user(username)
+        if reg_user and check_password_hash(reg_user["password"], password):
+        #flash('You have been logged in!', 'success')
+         session["user"] = username
+        return redirect(url_for('gallery', username=session["user"]))
+   # else:
+       # flash('Login unsuccessful. Please try again', 'danger')
+        return render_template("login.html", title='Sign In', form=form)
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -116,10 +106,11 @@ def signup():
 
     return render_template("signup.html")
 
-
-@app.route('/account')
-def account():
-    return render_template("personalaccount.html")
+@app.route('/logout')
+def logout():
+    logout_user()
+    flash('You have been successfully logged out!', 'success')
+    return redirect(url_for('landing_page'))
 
 
 if __name__ == '__main__':

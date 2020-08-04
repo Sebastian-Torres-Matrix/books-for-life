@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
@@ -21,13 +20,11 @@
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
 					<li><a href="{{url_for('gallery')}}">Book Gallery</a></li>
 					<li><a href="{{url_for('book')}}">Add Book</a></li>
-					<li><a href="{{url_for('account')}}">Account</a></li>
 					<li><a href="{{url_for('logout')}}">Sign Out</a></li>
 				</ul>
 				<ul class="side-nav" id="mobile-demo">
 					<li><a href="{{url_for('gallery')}}">Book Gallery</a></li>
 					<li><a href="{{url_for('book')}}">Add Book</a></li>
-					<li><a href="{{url_for('account')}}">Account</a></li>
                     <li><a href="{{url_for('logout')}}">Sign Out</a></li>
 				</ul>
 			</div>
@@ -54,15 +51,12 @@
 			</div>
 		</div>
 		<div class="footer-copyright">
-			<div class="container">
-			 Copyright © Books For Life 2020. All rights reserved.
-			</div>
+			<div class="container">Copyright © Books For Life 2020. All rights reserved.</div>
 		</div>
 	</footer>
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 	<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
-
 </html>

@@ -33,11 +33,18 @@
       <p>{{ review.author}} </p>
       </div>
       
+        <ul class="collapsible">
+    <li>
+      <div class="collapsible-header">{{ review.title }}</div>
+      <div class="collapsible-body"><span>{{ review.description }}</span></div>
+    </li>
+  </ul>
+  <!--
        <div class="card-reveal">
       <span class="card-title grey-text text-darken-4">{{ review.title }}<i class="material-icons right">close</i></span>
       <p> {{ review.description }}</p>
     </div>
-      
+-->  
       <div class="card-action">
        <span><a href="#"><i class="material-icons">shopping_cart</i></a></span>
         <span><a href="#"><i class="material-icons">edit</i></a></span> 
