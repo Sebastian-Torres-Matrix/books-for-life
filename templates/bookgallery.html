@@ -20,21 +20,33 @@
 
 <!--Cards-->
 <div class="row">
+{% for review in reviews %}
   <div class="col s12 m6">
-    <div class="card">
-      <div class="card-image">
-        <img src="{{ book.cover_url }}" />
-        <span class="card-title card-action"><a href="#">{{ book.title }}</a></span>
+    <div class="card sticky-action">
+
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="{{ review.cover_url }}" />
       </div>
+      
       <div class="card-content">
-        <p>{{ book.author }}</p>
+      <span class="card-title activator grey-text text-darken-4">{{ review.title }}</span>
+      <p>{{ review.author}} </p>
       </div>
+      
+       <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">{{ review.title }}<i class="material-icons right">close</i></span>
+      <p> {{ review.description }}</p>
+    </div>
+      
       <div class="card-action">
+       <span><a href="#"><i class="material-icons">shopping_cart</i></a></span>
         <span><a href="#"><i class="material-icons">edit</i></a></span> 
         <span><a href="#"><i class="material-icons">delete</i></a></span>
       </div>
+
     </div>
-  </div>
+    </div>
+    </div>
 </div>
-</div>
+{% endfor %}
 {% endblock %}

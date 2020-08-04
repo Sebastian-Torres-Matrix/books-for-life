@@ -3,12 +3,6 @@ from flask import Flask, render_template, flash, redirect, request, url_for, ses
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-"""
-from forms import LoginForm, RegistrationForm
-from flask_login import (
-    LoginManager, current_user, login_user,
-    logout_user, login_required)
-"""
 from os import path
 if os.path.exists("env.py"):
     import env 
@@ -16,16 +10,18 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
-app.config['MONGO_URI'] = os.environ.get('MONGO_URI')
+app.config["MONGO_DBNAME"] = 'book_manager'  #os.environ.get("MONGO_DBNAME")
+app.config['MONGO_URI'] = os.environ['MONGO_URI']    #os.environ.get('MONGO_URI')
 app.secret_key = os.environ.get('SECRET_KEY')
 
 mongo = PyMongo(app)
+
 
 @app.route('/')
 @app.route('/index')
 def index():
     return render_template("index.html")
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -33,12 +29,13 @@ def login():
         password = request.form.get("password")
         reg_user = find_user(username)
         if reg_user and check_password_hash(reg_user["password"], password):
-        flash('You have been logged in!', 'success')
+        #flash('You have been logged in!', 'success')
          session["user"] = username
         return redirect(url_for('gallery', username=session["user"]))
-    else:
-        flash('Login unsuccessful. Please try again', 'danger')
+   # else:
+       # flash('Login unsuccessful. Please try again', 'danger')
         return render_template("login.html", title='Sign In', form=form)
+
 
 @app.route('/reviews')
 def reviews():
@@ -48,7 +45,7 @@ def reviews():
 
 @app.route('/gallery')
 def gallery():
-    return render_template("bookgallery.html")
+    return render_template("bookgallery.html", reviews=mongo.db.reviews.find())
 
 
 @app.route('/users')
@@ -61,34 +58,42 @@ def users():
 def book():
     return render_template("addbook.html")
 
+
 @app.route('/add_book')
 def add_book():
     return render_template("bookgallery.html")
 
+
 @app.route('/edit_book/<book_id>')
 def edit_book(book_id):
-    the_book =  mongo.db.tasks.find_one({"_id": ObjectId(book_id)})
-    all_categories =  mongo.db.categories.find()
-    return render_template("addbook.html", book=the_book, categories=all_categories)
+    the_book = mongo.db.tasks.find_one({"_id": ObjectId(book_id)})
+    all_categories = mongo.db.categories.find()
+    return render_template("addbook.html",
+                           book=the_book,
+                           categories=all_categories)
+
 
 @app.route('/update_book/<book_id>', methods=["POST"])
 def update_task(book_id):
-    books =  mongo.db.books
-    books.update( {'_id': ObjectId(book_id)},
-    {
-        'title':request.form.get('title'),
-        'author':request.form.get('author'),
-        'description': request.form.get('description'),
-        'cover_url': request.form.get('cover_url'),
-        'amazon_url':request.form.get('amazon_url')
-    })
+    books = mongo.db.books
+    books.update({'_id': ObjectId(book_id)},
+                 {
+                     'title': request.form.get('title'),
+                     'author': request.form.get('author'),
+                     'description': request.form.get('description'),
+                     'cover_url': request.form.get('cover_url'),
+                     'amazon_url': request.form.get('amazon_url')
+                 })
     return redirect(url_for('book'))
+
 
 @app.route('/delete_book/<book_id>')
 def delete_book(book_id):
     mongo.db.books.remove({'_id': ObjectId(book_id)})
-    flash(('The book has been successfully deleted').format(book_id), 'success')
+    flash(('The book has been successfully deleted').format(book_id),
+          'success')
     return render_template("bookgallery.html")
+
 
 @app.route('/logout')
 def logout():
@@ -96,12 +101,20 @@ def logout():
     flash('You have been successfully logged out!', 'success')
     return redirect(url_for('landing_page'))
 
-@app.route('/signup') #, methods=['GET', 'POST'])
+
+@app.route('/signup', methods=['GET', 'POST'])
 def signup():
-    #form = RegisterForm()
-    #if form.validate_on_submit():
-        return render_template("signup.html") #, form=form)
-        # return redirect(url_for('book_gallery'))
+    if request.method == 'POST':
+
+        req = request.form
+
+        username = req.get('username')
+        email = req.get('email')
+        password = req.get("password")
+        flash('You have been successfully logged out!')
+        return redirect(url_for('gallery'))
+
+    return render_template("signup.html")
 
 
 @app.route('/account')
@@ -111,6 +124,5 @@ def account():
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
-    port=int(os.environ.get('PORT')),
-    debug=True)
-
+            port=int(os.environ.get('PORT')),
+            debug=True)
