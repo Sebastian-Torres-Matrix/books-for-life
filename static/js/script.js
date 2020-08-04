@@ -4,15 +4,9 @@
   $(document).ready(function(){
     $('input.autocomplete').autocomplete({
       data: {
-        "Mindset": null,
-        "Grit": null,
-        "Awaken The Giant Within": null
+        "{{ review.title }}": null,
       },
     });
-  });
-
-  
-  // Reviews textarea
-    $(document).ready(function() {
     $('textarea#reviews').characterCounter();
+    $('.modal').modal();
   });

@@ -66,15 +66,12 @@ def update_task(book_id):
                      'amazon_url': request.form.get('amazon_url')
                  })
     return redirect(url_for('book'))
+#flash(('The book has been successfully deleted').format(book_id),'success')
 
-
-@app.route('/delete_book/<book_id>')
-def delete_book(book_id):
-    mongo.db.books.remove({'_id': ObjectId(book_id)})
-    flash(('The book has been successfully deleted').format(book_id),
-          'success')
-    return render_template("bookgallery.html")
-
+@app.route('/delete_review/<review_id>')
+def delete_review(review_id):
+    mongo.db.reviews.remove({'_id': ObjectId(review_id)})
+    return redirect(url_for('gallery'))
 
 @app.route('/users')
 def users():
