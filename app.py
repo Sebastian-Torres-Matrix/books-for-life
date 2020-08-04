@@ -38,8 +38,10 @@ def book():
     return render_template("addbook.html")
 
 
-@app.route('/add_book')
+@app.route('/add_book', methods=['POST'])
 def add_book():
+    reviews =  mongo.db.reviews
+    reviews.insert_one(request.form.to_dict())
     return redirect(url_for('gallery'))
 
 
