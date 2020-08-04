@@ -29,10 +29,13 @@ def index():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    form = LoginForm()
-    if form.validate_on_submit():
+        username = request.form.get('username')
+        password = request.form.get("password")
+        reg_user = find_user(username)
+        if reg_user and check_password_hash(reg_user["password"], password):
         flash('You have been logged in!', 'success')
-        return redirect(url_for('gallery'))
+         session["user"] = username
+        return redirect(url_for('gallery', username=session["user"]))
     else:
         flash('Login unsuccessful. Please try again', 'danger')
         return render_template("login.html", title='Sign In', form=form)
