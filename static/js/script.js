@@ -9,4 +9,5 @@
     });
     $('textarea#reviews').characterCounter();
     $('.modal').modal();
+    $('.materialboxed').materialbox();
   });

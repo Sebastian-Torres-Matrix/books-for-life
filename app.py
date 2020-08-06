@@ -44,28 +44,25 @@ def add_book():
     reviews.insert_one(request.form.to_dict())
     return redirect(url_for('gallery'))
 
+@app.route('/edit_review/<review_id>')
+def edit_review(review_id):
+    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+    return render_template("editreview.html", review=review)
 
-@app.route('/edit_book/<book_id>')
-def edit_book(book_id):
-    the_book = mongo.db.reviews.find_one({"_id": ObjectId(book_id)})
-    all_reviews = mongo.db.reviews.find()
-    return render_template("addbook.html",
-                           book=the_book,
-                           reviews=all_reviews)
-
-
-@app.route('/update_book/<book_id>', methods=["POST"])
-def update_task(book_id):
-    reviews = mongo.db.reviews
-    reviews.update({'_id': ObjectId(book_id)},
+@app.route('/update_review/<review_id>', methods=["POST"])
+def update_review(review_id):
+    review = mongo.db.reviews
+    review.update({'_id': ObjectId(review_id)},
                  {
                      'title': request.form.get('title'),
                      'author': request.form.get('author'),
                      'description': request.form.get('description'),
-                     'cover_url': request.form.get('cover_url'),
+                     'cover_url': request.form.get('review.cover_url'),
                      'amazon_url': request.form.get('amazon_url')
                  })
-    return redirect(url_for('book'))
+    #flash('Review Updated ', 'success')
+    return redirect(url_for('gallery'))
+
 #flash(('The book has been successfully deleted').format(book_id),'success')
 
 @app.route('/delete_review/<review_id>')
