@@ -3,7 +3,9 @@
   
     <div class="container">
     <div>
+        {% block title %}
         <h3 class="form-heading">Add Book</h3>
+        {% endblock %}
     </div>
 
      <form class="col s12" action="{{ url_for('add_book') }}" method="POST">

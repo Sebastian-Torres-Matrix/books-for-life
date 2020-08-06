@@ -47,19 +47,27 @@
 -->  
       <div class="card-action">
        <span><a href="{{ review.amazon_url }}"  target="_blank"><i class="material-icons">shopping_cart</i></a></span>
-        <span><a href="#"><i class="material-icons">edit</i></a></span> 
-        <span><a href="{{url_for('delete_review', review_id=review._id)}}"><i class="material-icons">delete</i></a></span>
-          <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-
-
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
+        <span><a href="#modal-edit" class="modal-trigger"><i class="material-icons">edit</i></a></span>
+          <div id="modal-edit" class="modal">
     <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
+
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+    <a href="{{url_for('delete_review', review_id=review._id)}}">Edit</a>
+    </div>
+  </div> 
+
+        <span><a href="#modal-delete" class="modal-trigger"><i class="material-icons">delete</i></a></span>
+
+  <!-- Modal Structure -->
+  <div id="modal-delete" class="modal">
+    <div class="modal-content">
+      <h4>Are you sure you want to delete {{ review.title }}?</h4>
+    </div>
+    <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+    <a href="{{url_for('delete_review', review_id=review._id)}}">Delete</a>
     </div>
   </div>
       </div>

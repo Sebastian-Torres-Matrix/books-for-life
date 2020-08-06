@@ -4,16 +4,16 @@
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
  body {
     min-height: 100vh;
-     background-color: #ffffff;
+    background-color: #ffffff;
   }
 
   .btn-large {
-      margin: auto;
+    margin: auto;
   }
 
   .container {
