@@ -18,11 +18,37 @@ body {
 
 }
 
+#footer-color,
+#nav-color {
+    background-color: #E8D0A9 !important;
+}
+
+#bg-addbook {
+    background-image: url("https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg");
+    background-size: cover;
+    background-position: center;    
+}
+
+.jumbotron { 
+  padding: 30px; /* fills out the jumbotron */
+  background-color: #eef7f9;
+}
+
+.card {
+    max-width: 300px!important;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible;
+}
 
 .btn-large {
     margin: auto;
 }
 
+.btn-submit, 
+.row {
+    margin: auto !important;
+}
 /*
 .container {
     border: 2px solid black;

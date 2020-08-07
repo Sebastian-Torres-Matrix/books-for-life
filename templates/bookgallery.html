@@ -4,6 +4,7 @@
 <div>
   <h3>BOOK GALLERY</h3>
 </div>
+    
 
 <!--Search Bar-->
 <div class="row">
@@ -17,38 +18,37 @@
     </div>
   </div>
 </div>
-
+</div>
 <!--Cards-->
-<div class="row">
+
+
 {% for review in reviews %}
-  <div class="col s12 m6">
+<div class="row">
+  <div class="col s12 m4">
     <div class="card sticky-action">
 
       <div class="card-image waves-effect waves-block waves-light">
-        <img class="activator materialboxed" width="800" src="{{ review.cover_url }}" />
+        <img class="activator" src="{{ review.cover_url }}" />
       </div>
       
       <div class="card-content">
       <span class="card-title activator grey-text text-darken-4"><strong>{{ review.title }}</strong></span>
       <p>{{ review.author}} </p>
       </div>
-      
-        <ul class="collapsible">
-    <li>
-      <div class="collapsible-header"><i class="material-icons">expand_more</i>Description</div>
-      <div class="collapsible-body"><span>{{ review.description }}</span></div>
-    </li>
-  </ul>
-  <!--
+  
+      <div class="activator"><i class="material-icons">expand_more</i>Description</div>
+ 
+  
        <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4">{{ review.title }}<i class="material-icons right">close</i></span>
+      <span class="card-title grey-text text-darken-4"><i class="material-icons right">expand more</i>{{ review.title }}</span>
       <p> {{ review.description }}</p>
-    </div>
--->  
+     </div>
+
       <div class="card-action">
        <span><a href="{{ review.amazon_url }}"  target="_blank"><i class="material-icons">shopping_cart</i></a></span>
         <span><a href="{{url_for('edit_review', review_id=review._id)}}"><i class="material-icons">edit</i></a></span>
         <span><a href="{{url_for('delete_review', review_id=review._id)}}"><i class="material-icons">delete</i></a></span>
+       
 
 <!--
         <span><a href="#modal-delete" class="modal-trigger"><i class="material-icons">delete</i></a></span>
@@ -69,7 +69,8 @@
 
     </div>
     </div>
+    {% endfor %}
     </div>
-</div>
-{% endfor %}
+
+
 {% endblock %}

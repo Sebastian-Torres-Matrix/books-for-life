@@ -7,7 +7,10 @@
         "{{ review.title }}": null,
       },
     });
-    $('textarea#reviews').characterCounter();
     $('.modal').modal();
-    $('.materialboxed').materialbox();
   });
+
+   $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+        

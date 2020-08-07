@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
   
-    <div class="container">
+    <div class="container jumbotron">
     <div>
         <h3 class="form-heading">Edit Book</h3>
     </div>
@@ -13,33 +13,25 @@
         <label for="title">Title: </label>
           <input name="title" id="title" type="text" data-length="20" class="validate">
         </div>
-      </div>
 
-       <div class="row">
         <div class="input-field col s12">
         <i class="material-icons prefix">person</i>
         <label for="author">Author: </label>
-          <input name="author" id="author" type="text" class="validate">
+          <input name="author" id="author" type="text" data-length="20" class="validate">
         </div>
-      </div>
 
-            <div class="row">
         <div class="input-field col s12">
         <i class="material-icons prefix">collections</i>
         <label for="description">Description: </label>
-          <input name="description" id="description" type="text" class="validate">
+          <input name="description" id="description" type="text" data-length="50" class="validate">
         </div>
-      </div>
 
-            <div class="row">
         <div class="input-field col s12 ">
         <i class="material-icons prefix">link</i>
         <label for="cover_url">Link To Book Cover Image: </label>
           <input name="cover_url" id="cover_url" type="text" class="validate">
         </div>
-      </div>
 
-            <div class="row">
         <div class="input-field col s12">
         <i class="material-icons prefix">link</i>
         <label for="amazon_url">Link to URL at Amazon: </label>
@@ -47,7 +39,7 @@
         </div>
       </div>
 
-      <div>
+      <div class="center-align">
       <button class="btn-large waves-effect waves-light" type="submit" name="action">Update</button>
       </div>
     </form>

@@ -53,16 +53,16 @@ def edit_review(review_id):
 def update_review(review_id):
     review = mongo.db.reviews
     review.update({'_id': ObjectId(review_id)},
-                 {
-                     'title': request.form.get('title'),
-                     'author': request.form.get('author'),
-                     'description': request.form.get('description'),
-                     'cover_url': request.form.get('review.cover_url'),
-                     'amazon_url': request.form.get('amazon_url')
-                 })
-    #flash('Review Updated ', 'success')
+    {
+        'title': request.form.get('title'),
+        'author': request.form.get('author'),
+        'description': request.form.get('description'),
+        'cover_url': request.form.get('cover_url'),
+        'amazon_url': request.form.get('amazon_url')
+    })
     return redirect(url_for('gallery'))
-
+    
+#flash('Review Updated ', 'success')
 #flash(('The book has been successfully deleted').format(book_id),'success')
 
 @app.route('/delete_review/<review_id>')
