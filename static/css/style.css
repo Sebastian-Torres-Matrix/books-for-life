@@ -8,7 +8,7 @@ html {
 }
 
 body {
-    min-height: 100vh;
+    height: 100vh;
     background-color: #ffffff;
     /*
     background-image: url("https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg");
@@ -33,6 +33,7 @@ body {
 .jumbotron { 
   padding: 30px; /* fills out the jumbotron */
   background-color: #eef7f9;
+  border: 2px solid black;
 }
 
 .card {
@@ -50,9 +51,3 @@ body {
 .row {
     margin: auto !important;
 }
-/*
-.container {
-    border: 2px solid black;
-    border-radius: 5px;
-}
-*/

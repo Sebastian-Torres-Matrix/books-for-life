@@ -1,11 +1,8 @@
-
-
 // Search Bar
   $(document).ready(function(){
     $('input.autocomplete').autocomplete({
       data: {
-        "{{ review.title }}": null,
-      },
+        "{{ review.title }}": null
     });
   });
 
@@ -14,4 +11,3 @@
     $('.tooltipped').tooltip();
     $('.modal').modal();
   });
-        

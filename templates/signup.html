@@ -5,26 +5,25 @@
   <h3>Welcome to BOOKS FOR LIFE</h3>
 </div>
 
- 
   <form class="col s12" action="/signup" method="POST">
     <div class="row">
 
-      <div class="input-field col s12">
+            <div class="input-field col s12">
         <i class="material-icons prefix">account_circle</i>
         <label for="username">Username: </label>
-        <input name="username" id="username" class="validate" />
+        <input name="username" id="username" type="text" data-length="20" class="validate form-control" required/>
       </div>
     
       <div class="input-field col s12">
         <i class="material-icons prefix">email</i>
         <label for="email">Email: </label>
-        <input id="email" type="email" class="validate" />
+        <input name="email" id="email" type="email" data-length="40" class="validate form-control" required/>
       </div>
        
       <div class="input-field col s12">
         <i class="material-icons prefix">lock</i>
         <label for="password">Password: </label>
-        <input id="password" type="password" class="validate" />
+        <input name="password" id="password" type="password" data-length="20" class="validate form-control" required/>
       </div>
     </div>
 

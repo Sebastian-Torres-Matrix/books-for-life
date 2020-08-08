@@ -1,5 +1,6 @@
 import os
-from flask import Flask, render_template, flash, redirect, request, url_for, session
+import bcrypt
+from flask import Flask, render_template, flash, redirect, request, url_for, session, Markup
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -44,10 +45,12 @@ def add_book():
     reviews.insert_one(request.form.to_dict())
     return redirect(url_for('gallery'))
 
+
 @app.route('/edit_review/<review_id>')
 def edit_review(review_id):
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     return render_template("editreview.html", review=review)
+
 
 @app.route('/update_review/<review_id>', methods=["POST"])
 def update_review(review_id):
@@ -62,54 +65,62 @@ def update_review(review_id):
     })
     return redirect(url_for('gallery'))
     
-#flash('Review Updated ', 'success')
-#flash(('The book has been successfully deleted').format(book_id),'success')
 
 @app.route('/delete_review/<review_id>')
 def delete_review(review_id):
     mongo.db.reviews.remove({'_id': ObjectId(review_id)})
     return redirect(url_for('gallery'))
 
-@app.route('/users')
-def users():
-    users = mongo.db.users.find()
-    return render_template("users.html", users=users)
+users = mongo.db.users
+
+def find_user(username):
+    return users.find_one({"username": username})
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-        username = request.form.get('username')
-        password = request.form.get("password")
-        reg_user = find_user(username)
-        if reg_user and check_password_hash(reg_user["password"], password):
-        #flash('You have been logged in!', 'success')
-         session["user"] = username
-        return redirect(url_for('gallery', username=session["user"]))
-   # else:
-       # flash('Login unsuccessful. Please try again', 'danger')
-        return render_template("login.html", title='Sign In', form=form)
-
+        if request.method == "POST":
+            username = request.form.get('username')
+            password = request.form.get("password")
+            reg_user = find_user(username)
+            
+            if reg_user and check_password_hash(reg_user["password"], password):
+                session["user"] = username
+                return redirect(url_for('gallery', username=session["user"]))
+                
+            else:
+                return redirect(url_for('login'))
+                
+        return render_template('login.html')
+        
+        
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
-    if request.method == 'POST':
+        if request.method == 'POST':
+            users = mongo.db.users
+            reg_user = users.find_one({'name' : request.form['username']})
+            
+            if reg_user is None:
+                hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
+                users.insert({'name': request.form['username'], 'password' : hashpass})
+                session['username'] = request.form['username']
+                return redirect(url_for('gallery'))
+                
+            return 'Username already exists'
+            
+        return render_template("signup.html")
 
-        req = request.form
-
-        username = req.get('username')
-        email = req.get('email')
-        password = req.get("password")
-        flash('You have been successfully logged out!')
-        return redirect(url_for('gallery'))
-
-    return render_template("signup.html")
 
 @app.route('/logout')
 def logout():
     logout_user()
-    flash('You have been successfully logged out!', 'success')
+    #session.clear()
+    #flash('You have been successfully logged out!', 'success')
     return redirect(url_for('landing_page'))
 
 
 if __name__ == '__main__':
+    app.secret_key = 'mysecret'
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
             debug=True)
