@@ -1,7 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="container">
-<div>
+<div id="bg-bookgallery">
+<div class="container jumbotron">
+<div class="center-align">
   <h3>BOOK GALLERY</h3>
 </div>
     
@@ -24,8 +25,9 @@
 
 {% for review in reviews %}
 <div class="row">
+<div class="container">
   <div class="col s12 m4">
-    <div class="card sticky-action">
+    <div class="card sticky-action hoverable">
 
       <div class="card-image waves-effect waves-block waves-light">
         <img class="activator" src="{{ review.cover_url }}" />
@@ -35,19 +37,21 @@
       <span class="card-title activator grey-text text-darken-4"><strong>{{ review.title }}</strong></span>
       <p>{{ review.author}} </p>
       </div>
+      <hr>
   
-      <div class="activator"><i class="material-icons">expand_more</i>Description</div>
+      <div class="activator">Description<i class="material-icons right">expand_more</i></div>
  
   
        <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4"><i class="material-icons right">expand more</i>{{ review.title }}</span>
+      <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i><strong>{{ review.title }}</strong></span>
+      <hr>
       <p> {{ review.description }}</p>
      </div>
 
       <div class="card-action">
-       <span><a href="{{ review.amazon_url }}"  target="_blank"><i class="material-icons">shopping_cart</i></a></span>
-        <span><a href="{{url_for('edit_review', review_id=review._id)}}"><i class="material-icons">edit</i></a></span>
-        <span><a href="{{url_for('delete_review', review_id=review._id)}}"><i class="material-icons">delete</i></a></span>
+        <span><a href="{{url_for('edit_review', review_id=review._id)}}" class="tooltipped" data-position="bottom" data-tooltip="Edit"><i class="material-icons">edit</i></a></span>
+        <span><a href="{{url_for('delete_review', review_id=review._id)}}" class="tooltipped" data-position="bottom" data-tooltip="Delete"><i class="material-icons">delete</i></a></span>
+        <span class="right"><a href="{{ review.amazon_url }}"  target="_blank" class="tooltipped" data-position="bottom" data-tooltip="Buy"><i class="material-icons">shopping_cart</i></a></span>
        
 
 <!--
@@ -69,7 +73,10 @@
 
     </div>
     </div>
+    </div>
     {% endfor %}
+    
+    </div>
     </div>
 
 

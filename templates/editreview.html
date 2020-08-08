@@ -11,31 +11,31 @@
         <div class="input-field col s12">
         <i class="material-icons prefix">create</i>
         <label for="title">Title: </label>
-          <input name="title" id="title" type="text" data-length="20" class="validate">
+          <input value="{{ review.title }}" name="title" id="title" type="text" data-length="20" class="validate">
         </div>
 
         <div class="input-field col s12">
         <i class="material-icons prefix">person</i>
         <label for="author">Author: </label>
-          <input name="author" id="author" type="text" data-length="20" class="validate">
+          <input value="{{ review.author }}" name="author" id="author" type="text" data-length="20" class="validate">
         </div>
 
         <div class="input-field col s12">
         <i class="material-icons prefix">collections</i>
         <label for="description">Description: </label>
-          <input name="description" id="description" type="text" data-length="50" class="validate">
+          <input value="{{ review.description }}" name="description" id="description" type="text" data-length="50" class="validate">
         </div>
 
         <div class="input-field col s12 ">
         <i class="material-icons prefix">link</i>
         <label for="cover_url">Link To Book Cover Image: </label>
-          <input name="cover_url" id="cover_url" type="text" class="validate">
+          <input value="{{ review.cover_url }}" name="cover_url" id="cover_url" type="text" class="validate">
         </div>
 
         <div class="input-field col s12">
         <i class="material-icons prefix">link</i>
         <label for="amazon_url">Link to URL at Amazon: </label>
-          <input name="amazon_url" id="amazon_url" type="text" class="validate">          
+          <input value="{{ review.amazon_url }}" name="amazon_url" id="amazon_url" type="text" class="validate">          
         </div>
       </div>
 
