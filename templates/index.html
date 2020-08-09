@@ -1,22 +1,21 @@
-{% extends 'base.html' %}
-{% block content %}
-
+{% extends 'base.html' %} {% block content %}
 <div id="bg-home">
 
-<div class="container jumbotron center-align">
+  <div class="container jumbotron center-align">
+
+
     <div>
-        <h1>Welcome to Books for Life</h1>
+      <h1>Welcome to Books for Life</h1>
     </div>
 
- 
-        <div>
-            <a class="btn-large waves-effect waves-light" href="{{ url_for('login')}}">Sign In</a>
-        </div>
-        <div>
-            <span>Not a member yet?<a href="{{ url_for('signup')}}">Sign up here</a></span>
-        </div>
+    <div>
+      <a class="btn-large waves-effect waves-light" href="{{ url_for('login')}}">Sign In</a>
     </div>
 
+    <div>
+      <span>Not a member yet?<a href="{{ url_for('signup')}}">Sign up here</a></span>
+    </div>
+    
+  </div>
 </div>
-
 {% endblock %}

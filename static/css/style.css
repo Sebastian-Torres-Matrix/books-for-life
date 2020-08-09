@@ -7,15 +7,20 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    height: 100vh;
-    background-color: #ffffff;
-    /*
-    background-image: url("https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg");
-    background-size: cover;
-    background-position: center;
-    */
+html, body {
+  height: 100%;
+}
 
+.content {
+  flex: 1 0 auto;
+}
+
+body {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    background: url("https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg") no-repeat center center fixed;
+    background-size: cover;
 }
 
 #footer-color,
@@ -23,11 +28,19 @@ body {
     background-color: #E8D0A9 !important;
 }
 
+
+
+/*
 #bg-home,
 #bg-bookgallery,
 #bg-addbook {
     background: url("https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg") no-repeat center center fixed;
     background-size: cover;
+}
+*/
+
+#searchbox {
+     margin-top: 10px;
 }
 
 .jumbotron { 
@@ -50,4 +63,8 @@ body {
 .btn-submit, 
 .row {
     margin: auto !important;
+}
+
+.footer {
+  flex-shrink: 0;
 }
