@@ -23,15 +23,24 @@ def index():
     return render_template("index.html")
 
 
+
 @app.route('/reviews')
 def reviews():
     reviews = mongo.db.reviews.find()
     return render_template("reviews.html", reviews=reviews)
 
 
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+    query = request.form.get("query")
+    reviews = mongo.db.reviews.find({"$text": {"$search": query}})
+    return render_template("bookgallery.html", reviews=reviews)
+
+
 @app.route('/gallery')
 def gallery():
     return render_template("bookgallery.html", reviews=mongo.db.reviews.find())
+
 
 """
 @app.route('/gallery/<username>', methods=['GET', 'POST'])
@@ -53,7 +62,15 @@ def book():
 @app.route('/add_book', methods=['POST'])
 def add_book():
     reviews =  mongo.db.reviews
-    reviews.insert_one(request.form.to_dict())
+    reviews.insert_one(
+        {
+        'title': request.form.get('title').title(),
+        'author': request.form.get('author').title(),
+        'description': request.form.get('description'),
+        'cover_url': request.form.get('cover_url'),
+        'amazon_url': request.form.get('amazon_url')
+        }
+        )
     flash("Added book successful!")
     return redirect(url_for('gallery'))
 
@@ -69,19 +86,20 @@ def update_review(review_id):
     review = mongo.db.reviews
     review.update({'_id': ObjectId(review_id)},
     {
-        'title': request.form.get('title'),
-        'author': request.form.get('author'),
+        'title': request.form.get('title').title(),
+        'author': request.form.get('author').title(),
         'description': request.form.get('description'),
         'cover_url': request.form.get('cover_url'),
         'amazon_url': request.form.get('amazon_url')
     })
-    flash("Books updated")
+    flash("Books successfully updated")
     return redirect(url_for('gallery'))
     
 
 @app.route('/delete_review/<review_id>')
 def delete_review(review_id):
-    mongo.db.reviews.remove({'_id': ObjectId(review_id)})
+    mongo.db.reviews.delete_one({'_id': ObjectId(review_id)})
+    flash("Book successfully deleted")
     return redirect(url_for('gallery'))
 
 
