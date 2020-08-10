@@ -11,19 +11,21 @@
             <div class="input-field col s12">
         <i class="material-icons prefix">account_circle</i>
         <label for="username">Username: </label>
-        <input name="username" id="username" type="text" data-length="20" class="validate form-control" required/>
+        <input name="username" id="username" type="text" minlength="5" maxlength="15" data-length="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate form-control" required/>
       </div>
     
+    <!--
       <div class="input-field col s12">
         <i class="material-icons prefix">email</i>
         <label for="email">Email: </label>
         <input name="email" id="email" type="email" data-length="40" class="validate form-control" required/>
       </div>
+      -->
        
       <div class="input-field col s12">
         <i class="material-icons prefix">lock</i>
         <label for="password">Password: </label>
-        <input name="password" id="password" type="password" data-length="20" class="validate form-control" required/>
+        <input name="password" id="password" type="password" minlength="5" maxlength="15" data-length="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate form-control" required/>
       </div>
     </div>
 

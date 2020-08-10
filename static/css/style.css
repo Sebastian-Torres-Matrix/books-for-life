@@ -28,7 +28,9 @@ body {
     background-color: #E8D0A9 !important;
 }
 
-
+.flashes h4 {
+    line-height: 2;
+}
 
 /*
 #bg-home,

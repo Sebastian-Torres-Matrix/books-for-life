@@ -1,5 +1,4 @@
 import os
-import bcrypt
 from flask import Flask, render_template, flash, redirect, request, url_for, session, Markup
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -96,19 +95,24 @@ def login():
         
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
-        if request.method == 'POST':
-            users = mongo.db.users
-            reg_user = users.find_one({'name' : request.form['username']})
-            
-            if reg_user is None:
-                hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
-                users.insert({'name': request.form['username'], 'password' : hashpass})
-                session['username'] = request.form['username']
-                return redirect(url_for('gallery'))
-                
-            return 'Username already exists'
-            
-        return render_template("signup.html")
+    if request.method == 'POST':
+        existing_user = mongo.db.users.find_one({"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Username already exists")
+            return redirect(url_for("signup"))
+
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(signup)
+
+        sessiom["user"] = request.form.get("username").lower()
+        flash("Signup successful!")
+        return redirect(url_for('gallery'))
+        
+    return render_template("signup.html")
 
 
 @app.route('/logout')
@@ -120,7 +124,6 @@ def logout():
 
 
 if __name__ == '__main__':
-    app.secret_key = 'mysecret'
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
             debug=True)
