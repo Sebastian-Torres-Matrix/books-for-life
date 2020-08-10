@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" 
-        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" type="text/css" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" type="text/css">
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
 	
 	<title>Books For Life</title>
 </head>
-<!--% include head  %-->
 
 <body>
 	<!--Navbar-->
@@ -34,17 +31,6 @@
 		</nav>
 	</header>
     
-    <section>
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                <div class="row flashes">
-                    <h4 class="center-align">{{ message }}</h4>
-                </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-    </section>
     <div class="content">
 {% block content %}
 {% endblock %}

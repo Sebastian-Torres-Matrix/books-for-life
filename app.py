@@ -33,6 +33,18 @@ def reviews():
 def gallery():
     return render_template("bookgallery.html", reviews=mongo.db.reviews.find())
 
+"""
+@app.route('/gallery/<username>', methods=['GET', 'POST'])
+def gallery(username):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if session["user"]:    
+        return render_template("bookgallery.html", username=username)
+
+    return redirect(url_for('login'))
+"""
+
 @app.route('/book')
 def book():
     return render_template("addbook.html")
@@ -42,6 +54,7 @@ def book():
 def add_book():
     reviews =  mongo.db.reviews
     reviews.insert_one(request.form.to_dict())
+    flash("Added book successful!")
     return redirect(url_for('gallery'))
 
 
@@ -62,6 +75,7 @@ def update_review(review_id):
         'cover_url': request.form.get('cover_url'),
         'amazon_url': request.form.get('amazon_url')
     })
+    flash("Books updated")
     return redirect(url_for('gallery'))
     
 
@@ -80,8 +94,11 @@ def login():
         if existing_user:
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
-                    sessiom["user"] = request.form.get("username").lower()
-                    flash("Welcome {}".format(request.form.get("username")))
+                    session["user"] = request.form.get("username").lower()
+                    flash("Welcome back {}!".format(
+                        request.form.get("username")))
+                    return redirect(url_for(
+                        'gallery', username=session["user"]))
 
             else:
                 flash("Incorrect username or password")
@@ -104,15 +121,15 @@ def signup():
             flash("Username already exists")
             return redirect(url_for("signup"))
 
-        register = {
+        signup = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(signup)
 
-        sessiom["user"] = request.form.get("username").lower()
+        session["user"] = request.form.get("username").lower()
         flash("Signup successful!")
-        return redirect(url_for('gallery'))
+        return redirect(url_for('gallery', username=session["user"]))
         
     return render_template("signup.html")
 

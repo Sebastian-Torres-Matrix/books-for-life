@@ -4,6 +4,17 @@
   <div class="container jumbotron">
     <div class="center-align">
       <h3>BOOK GALLERY</h3>
+      <p>
+              {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                <div class="row flashes">
+                    <h4 class="center-align">{{ message }}</h4>
+                </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+      </p>
     </div>
   </div>
 
