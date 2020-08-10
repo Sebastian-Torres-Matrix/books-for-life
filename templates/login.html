@@ -3,22 +3,22 @@
 <div class="container jumbotron">
 
 <div class="center-align">
-  <h3>Welcome to BOOKS FOR LIFE</h3>
+  <h3>LOGIN to BOOKS FOR LIFE</h3>
 </div>
 
   <form class="col s12" action="/login" method="POST">
     <div class="row">
 
-            <div class="input-field col s12">
+                <div class="input-field col s12">
         <i class="material-icons prefix">account_circle</i>
         <label for="username">Username: </label>
-        <input name="username" id="username" type="text" class="validate form-control" required/>
+        <input name="username" id="username" type="text" minlength="5" maxlength="15" data-length="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate form-control" required/>
       </div>
-
+       
       <div class="input-field col s12">
         <i class="material-icons prefix">lock</i>
         <label for="password">Password: </label>
-        <input name="password" id="password" type="password" class="validate form-control" required/>
+        <input name="password" id="password" type="password" minlength="5" maxlength="15" data-length="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate form-control" required/>
       </div>
     </div>
 

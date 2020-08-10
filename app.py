@@ -70,33 +70,35 @@ def delete_review(review_id):
     mongo.db.reviews.remove({'_id': ObjectId(review_id)})
     return redirect(url_for('gallery'))
 
-users = mongo.db.users
-
-def find_user(username):
-    return users.find_one({"username": username})
-
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-        if request.method == "POST":
-            username = request.form.get('username')
-            password = request.form.get("password")
-            reg_user = find_user(username)
-            
-            if reg_user and check_password_hash(reg_user["password"], password):
-                session["user"] = username
-                return redirect(url_for('gallery', username=session["user"]))
-                
+    if request.method == 'POST':
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                    sessiom["user"] = request.form.get("username").lower()
+                    flash("Welcome {}".format(request.form.get("username")))
+
             else:
+                flash("Incorrect username or password")
                 return redirect(url_for('login'))
-                
-        return render_template('login.html')
-        
-        
+
+        else:
+            flash("Incorrect username or password")
+            return redirect(url_for('login'))
+
+    return render_template("login.html")
+
+
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
-        existing_user = mongo.db.users.find_one({"username": request.form.get("username").lower()})
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
 
         if existing_user:
             flash("Username already exists")
@@ -117,13 +119,13 @@ def signup():
 
 @app.route('/logout')
 def logout():
-    logout_user()
-    #session.clear()
-    #flash('You have been successfully logged out!', 'success')
-    return redirect(url_for('landing_page'))
+    session.clear()
+    flash('You have been successfully logged out!')
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
+    app.secret_key = 'super secret key'
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
             debug=True)
