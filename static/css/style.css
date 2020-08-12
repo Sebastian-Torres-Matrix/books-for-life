@@ -1,18 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.sss {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    max-width: 780px;
+    max-height: 900px;
+}
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-html, body {
-  height: 100%;
+.form {
+    height: 50%;
+    width: 50%;
+
 }
 
-.content {
-  flex: 1 0 auto;
+html, 
+body {
+  height: 100%;
+  color: #fff;
 }
 
 body {
@@ -21,11 +35,62 @@ body {
     flex-direction: column;
     background: url("https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg") no-repeat center center fixed;
     background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
 }
 
-#footer-color,
-#nav-color {
-    background-color: #E8D0A9 !important;
+.content {
+  flex: 1 0 auto;
+}
+
+
+ /*NAVBAR*/
+
+ .brand-logo {
+     margin-left: 20px;
+ }
+
+nav ul {
+    margin: 0 30px 0 0;
+}
+
+/*FORMS*/
+
+/*BUTTONS*/
+
+/*CARDS*/
+
+.ccc {
+    margin-bottom: 70px;
+}
+
+.card {
+    max-width: 300px!important;
+    height: 675px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+img {
+    height: 450px;
+}
+
+.description-card {
+    padding: 12px 24px;
+}
+
+/*COLORS  #E8D0A9*/
+
+#color-footer,
+#color-nav {
+    background-color: #dabe8f !important;
+}
+
+hr,
+.material-icons {
+    color: #dabe8f !important;
 }
 
 .flashes h4 {
@@ -33,31 +98,34 @@ body {
     color: #fff;
 }
 
-/*
-#bg-home,
-#bg-bookgallery,
-#bg-addbook {
-    background: url("https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg") no-repeat center center fixed;
-    background-size: cover;
+
+.jumbotron-text {
+    margin-right: 10px;
+    line-height: 5;
 }
-*/
 
 #searchbox {
      margin-top: 10px;
 }
 
+.jumbotron-landingpage {
+    margin-top: 9rem;
+    margin-bottom: 9rem;
+    width: 55rem;
+}
+
 .jumbotron { 
-  padding: 30px; /* fills out the jumbotron */
-  background-color: #eef7f9;
+  padding: 30px; 
+  background-color: rgba(0, 0, 0, 0.85);
   border: 2px solid black;
 }
 
-.card {
-    max-width: 300px!important;
-    margin-left: auto;
-    margin-right: auto;
-    overflow: visible;
+.searchbox-container {
+    margin-bottom: 50px;
+    margin-top: 40px;
+    width: 1170px
 }
+
 
 .btn-large {
     margin: auto;
@@ -68,6 +136,38 @@ body {
     margin: auto !important;
 }
 
+.btn-reset {
+    margin-right: 15px;
+    background-color: #c60e00;
+}
+
+.btn-submit,
+.btn-addbook {
+    background-color: #528c59;
+}
+
+
+/*FOOTER*/
+
 .footer {
   flex-shrink: 0;
 }
+
+.container-footer {
+    margin-bottom: 30px;
+}
+
+.list-inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+}
+
+.list-inline > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+
+/*MEDIA QUERIES*/
