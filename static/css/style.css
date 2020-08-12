@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-.sss {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    max-width: 780px;
-    max-height: 900px;
-}
 
 * {
     margin: 0;
@@ -15,6 +9,7 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 10px !important;
 }
 
 .form {
@@ -30,7 +25,6 @@ body {
 }
 
 body {
-    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     background: url("https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg") no-repeat center center fixed;
@@ -47,26 +41,34 @@ body {
  /*NAVBAR*/
 
  .brand-logo {
-     margin-left: 20px;
+     margin-left: 2rem;
  }
 
 nav ul {
-    margin: 0 30px 0 0;
+    margin: 0 3rem 0 0;
 }
 
 /*FORMS*/
+
+#modal-book {
+    width: 30%;
+}
+
+.modal-content {
+    color: #000;
+}
 
 /*BUTTONS*/
 
 /*CARDS*/
 
 .ccc {
-    margin-bottom: 70px;
+    margin-bottom: 7rem;
 }
 
 .card {
-    max-width: 300px!important;
-    height: 675px;
+    max-width: 30rem!important;
+    height: 67.5rem;
     margin-left: auto;
     margin-right: auto;
     overflow: visible;
@@ -74,11 +76,16 @@ nav ul {
 }
 
 img {
-    height: 450px;
+    height: 45rem;
 }
 
 .description-card {
-    padding: 12px 24px;
+    padding: 1.2rem 2.4rem;
+}
+
+.reveal-content {
+    color: #000;
+    margin-top: 2rem;
 }
 
 /*COLORS  #E8D0A9*/
@@ -88,7 +95,6 @@ img {
     background-color: #dabe8f !important;
 }
 
-hr,
 .material-icons {
     color: #dabe8f !important;
 }
@@ -100,44 +106,40 @@ hr,
 
 
 .jumbotron-text {
-    margin-right: 10px;
-    line-height: 5;
+    margin-right: 1rem;
+    line-height: 0.5rem;
 }
 
 #searchbox {
-     margin-top: 10px;
+     margin-top: 1rem;
 }
 
 .jumbotron-landingpage {
-    margin-top: 9rem;
-    margin-bottom: 9rem;
-    width: 55rem;
+    margin-top: 14.4rem;
+    margin-bottom: 14.4rem;
+    width: 88rem;
 }
 
 .jumbotron { 
-  padding: 30px; 
+  padding: 3rem; 
   background-color: rgba(0, 0, 0, 0.85);
-  border: 2px solid black;
+  border: 0.2rem solid black;
 }
 
 .searchbox-container {
-    margin-bottom: 50px;
-    margin-top: 40px;
-    width: 1170px
+    margin-bottom: 5rem;
+    margin-top: 4rem;
+    width: 117rem;
 }
 
-
-.btn-large {
-    margin: auto;
-}
-
+.btn-large, 
 .btn-submit, 
 .row {
     margin: auto !important;
 }
 
 .btn-reset {
-    margin-right: 15px;
+    margin-right: 1.5rem;
     background-color: #c60e00;
 }
 
@@ -154,19 +156,19 @@ hr,
 }
 
 .container-footer {
-    margin-bottom: 30px;
+    margin-bottom: 3rem;
 }
 
 .list-inline {
   padding-left: 0;
-  margin-left: -5px;
+  margin-left: -0.5rem;
   list-style: none;
 }
 
 .list-inline > li {
   display: inline-block;
-  padding-right: 5px;
-  padding-left: 5px;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
 }
 
 
