@@ -40,19 +40,18 @@ body {
 }
 
 h3 {
-    font: 700;
+  font: 700;
 }
 
 /*NAVBAR*/
 
 #menu-icon {
-    color: #fff !important;
+  color: #fff !important;
 }
 
 .brand-logo {
   margin-left: 2rem;
 }
-
 
 nav ul {
   margin: 0 3rem 0 0;
@@ -71,7 +70,7 @@ nav ul {
 /*BUTTONS*/
 
 .fab {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 /*CARDS*/
@@ -81,31 +80,31 @@ nav ul {
 }
 
 #btn-lp {
-    margin: 3rem 0 1.5rem 0;
+  margin: 3rem 0 1.5rem 0;
 }
 
 .sidenav {
-    background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.85);
 }
 
-.sidenav li>a {
-    color: #fff;
+.sidenav li > a {
+  color: #fff;
 }
 
 .card {
   max-width: 30rem;
-  height: 65rem;
+  max-height: 65rem;
   margin-left: auto;
   margin-right: auto;
   overflow: visible;
   background-color: rgba(0, 0, 0, 0.85);
-  -webkit-box-shadow: 1px -9px 40px 8px rgba(,0,0,0.64);
--moz-box-shadow: 1px -9px 40px 8px rgba(0,0,0,0.64);
-box-shadow: 1px -9px 40px 8px rgba(0,0,0,0.64);
+  -webkit-box-shadow: 1px -9px 40px 8px rgba(, 0, 0, 0.64);
+  -moz-box-shadow: 1px -9px 40px 8px rgba(0, 0, 0, 0.64);
+  box-shadow: 1px -9px 40px 8px rgba(0, 0, 0, 0.64);
 }
 
 img {
-  height: 45rem;
+  max-height: 45rem;
 }
 
 .description-card {
@@ -142,22 +141,18 @@ img {
   margin-top: 1rem;
 }
 
-.jumbotron-landingpage {
-  margin-top: 14.4rem;
-  margin-bottom: 14.4rem;
-  width: 88rem;
-}
-
 .jumbotron {
   padding: 3rem;
   background-color: rgba(0, 0, 0, 0.85);
-  border: 0.2rem solid black;
+  margin-top: 14.4rem;
+  margin-bottom: 14.4rem;
+  max-width: 88rem;
 }
 
 .searchbox-container {
   margin-bottom: 5rem;
   margin-top: 4rem;
-  width: 117rem;
+  max-width: 117rem;
 }
 
 .btn-large,
@@ -211,5 +206,5 @@ img {
 /*MEDIA QUERIES*/
 
 .socialmedia-icon {
-    transform: scale(1.1) !important;
+  transform: scale(1.1) !important;
 }
