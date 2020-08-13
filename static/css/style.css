@@ -10,7 +10,7 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 10px !important;
+    font-size: 10px;
 }
 
 .form {
@@ -70,13 +70,14 @@ nav ul {
 }
 
 .card {
-    max-width: 30rem!important;
-    height: 67.5rem;
+    max-width: 30rem;
+    height: 65rem;
     margin-left: auto;
     margin-right: auto;
     overflow: visible;
     background-color: rgba(0, 0, 0, 0.85);
 }
+
 
 img {
     height: 45rem;
