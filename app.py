@@ -5,13 +5,12 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from os import path
 if os.path.exists("env.py"):
-    import env 
-
+    import env
 
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = 'book_manager' 
-app.config['MONGO_URI'] = os.environ['MONGO_URI']  
+app.config["MONGO_DBNAME"] = 'book_manager'
+app.config['MONGO_URI'] = os.environ['MONGO_URI']
 app.secret_key = os.environ.get('SECRET_KEY')
 
 mongo = PyMongo(app)
@@ -21,7 +20,6 @@ mongo = PyMongo(app)
 @app.route('/index')
 def index():
     return render_template("index.html")
-
 
 
 @app.route('/reviews')
@@ -42,18 +40,6 @@ def gallery():
     return render_template("bookgallery.html", reviews=mongo.db.reviews.find())
 
 
-"""
-@app.route('/gallery/<username>', methods=['GET', 'POST'])
-def gallery(username):
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-
-    if session["user"]:    
-        return render_template("bookgallery.html", username=username)
-
-    return redirect(url_for('login'))
-"""
-
 @app.route('/book')
 def book():
     return render_template("addbook.html")
@@ -61,16 +47,16 @@ def book():
 
 @app.route('/add_book', methods=['POST'])
 def add_book():
-    reviews =  mongo.db.reviews
+    reviews = mongo.db.reviews
     reviews.insert_one(
         {
-        'title': request.form.get('title').title(),
-        'author': request.form.get('author').title(),
-        'description': request.form.get('description'),
-        'cover_url': request.form.get('cover_url'),
-        'amazon_url': request.form.get('amazon_url')
+            'title': request.form.get('title').title(),
+            'author': request.form.get('author').title(),
+            'description': request.form.get('description'),
+            'cover_url': request.form.get('cover_url'),
+            'amazon_url': request.form.get('amazon_url')
         }
-        )
+    )
     flash("Added book successful!")
     return redirect(url_for('gallery'))
 
@@ -85,7 +71,7 @@ def edit_review(review_id):
 def update_review(review_id):
     review = mongo.db.reviews
     review.update({'_id': ObjectId(review_id)},
-    {
+                  {
         'title': request.form.get('title').title(),
         'author': request.form.get('author').title(),
         'description': request.form.get('description'),
@@ -94,7 +80,7 @@ def update_review(review_id):
     })
     flash("Books successfully updated")
     return redirect(url_for('gallery'))
-    
+
 
 @app.route('/delete_review/<review_id>')
 def delete_review(review_id):
@@ -111,12 +97,12 @@ def login():
 
         if existing_user:
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome back {}!".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
-                        'gallery', username=session["user"]))
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome back {}!".format(
+                    request.form.get("username")))
+                return redirect(url_for(
+                    'gallery', username=session["user"]))
 
             else:
                 flash("Incorrect username or password")
@@ -148,7 +134,7 @@ def signup():
         session["user"] = request.form.get("username").lower()
         flash("Signup successful!")
         return redirect(url_for('gallery', username=session["user"]))
-        
+
     return render_template("signup.html")
 
 

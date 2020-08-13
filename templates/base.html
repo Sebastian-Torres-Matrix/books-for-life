@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
-	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />	
 	<title>Books For Life</title>
 </head>
 
 <body>
 	<!--Navbar-->
-    
 		<nav id="color-nav" >
 			<div class="nav-wrapper">
-            
-            
 				<a href="{{url_for('index')}}" class="brand-logo">Books For Life</a>
 				<a href="#" class="sidenav-trigger" data-target="mobile-demo"><i class="material-icons" id="menu-icon">menu</i></a>
 				<ul class="right hide-on-med-and-down">
@@ -25,21 +21,16 @@
 					<li><a href="{{url_for('book')}}">Add Book</a></li>
 					<li><a href="{{url_for('logout')}}">Sign Out</a></li>
 				</ul>
-                     </div>
-                
-		</nav>
-                	
+                     </div>  
+		</nav>	
 				<ul class="sidenav" id="mobile-demo">
-
 					<li><a class="sidenav-links" href="{{url_for('gallery')}}">Book Gallery</a></li>
 					<li><a class="sidenav-links" href="{{url_for('book')}}">Add Book</a></li>
                     <li><a class="sidenav-links" href="{{url_for('logout')}}">Sign Out</a></li>
                     </div>
 				</ul>
            
- 
     <div class="content">
-
 {% block content %}
 {% endblock %}
     </div>
@@ -54,9 +45,9 @@
 				<div class="col l4 offset-l2 s12">
 					<h5 class="white-text">Social Media</h5>
 					<ul class="list-inline">
-						<li><a class="grey-text text-lighten-3" target="_blank" href="https://www.facebook.com/">Facebook</a></li>
-						<li><a class="grey-text text-lighten-3" target="_blank" href="https://www.instagram.com/">Instagram</a></li>
-						<li><a class="grey-text text-lighten-3" target="_blank" href="https://www.pinterest.com">Pinterest</a></li>
+						<li><a class="grey-text text-lighten-3" target="_blank" href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i></a></li>
+						<li><a class="grey-text text-lighten-3" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram-square"></i></a></li>
+						<li><a class="grey-text text-lighten-3" target="_blank" href="https://www.pinterest.com"><i class="fab fa-pinterest-square"></i></a></li>
 					</ul>
 				</div>
 			</div>

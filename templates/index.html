@@ -1,21 +1,20 @@
 {% extends 'base.html' %} {% block content %}
 <div id="bg-home">
-
   <div class="container jumbotron center-align jumbotron-landingpage">
-
-
     <div>
       <h1>Welcome to Books for Life</h1>
     </div>
 
-    <div>
-      <a class="btn-large waves-effect btn-submit" href="{{ url_for('login')}}">Sign In</a>
+    <div id="btn-lp">
+      <a class="btn-large waves-effect btn-submit" href="{{ url_for('login')}}"
+        >Sign In</a
+      >
     </div>
 
     <div class="jumbotron-whitespace">
-      <span class="jumbotron-text">Not a member yet?</span><span><a href="{{ url_for('signup')}}">Sign up here</a></span>
+      <span class="jumbotron-text">Not a member yet?</span
+      ><span><a href="{{ url_for('signup')}}">Sign up here</a></span>
     </div>
-    
   </div>
 </div>
 {% endblock %}

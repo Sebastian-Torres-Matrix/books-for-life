@@ -66,10 +66,18 @@ nav ul {
 
 /*BUTTONS*/
 
+.fab {
+    font-size: 3rem;
+}
+
 /*CARDS*/
 
 .ccc {
   margin-bottom: 7rem;
+}
+
+#btn-lp {
+    margin: 3rem 0 1.5rem 0;
 }
 
 .sidenav {

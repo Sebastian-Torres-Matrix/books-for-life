@@ -1,34 +1,58 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container jumbotron jumbotron-landingpage">
-
-<div class="center-align">
-  <h3>SIGN UP</h3>
-</div>
+  <div class="center-align">
+    <h3>SIGN UP</h3>
+  </div>
 
   <form class="col s12" action="/signup" method="POST">
     <div class="row">
-
-            <div class="input-field col s12">
+      <div class="input-field col s12">
         <i class="material-icons prefix">account_circle</i>
         <label for="username">Username: </label>
-        <input name="username" id="username" type="text" minlength="5" maxlength="15" data-length="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate form-control" required/>
+        <input
+          name="username"
+          id="username"
+          type="text"
+          minlength="5"
+          maxlength="15"
+          data-length="15"
+          pattern="^[a-zA-Z0-9]{5,15}$"
+          class="validate form-control"
+          required
+        />
       </div>
 
-       
       <div class="input-field col s12">
         <i class="material-icons prefix">lock</i>
         <label for="password">Password: </label>
-        <input name="password" id="password" type="password" minlength="5" maxlength="15" data-length="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate form-control" required/>
+        <input
+          name="password"
+          id="password"
+          type="password"
+          minlength="5"
+          maxlength="15"
+          data-length="15"
+          pattern="^[a-zA-Z0-9]{5,15}$"
+          class="validate form-control"
+          required
+        />
       </div>
     </div>
 
     <div class="center-align">
-    <div>
-      <button class="btn-large waves-effect btn-addbook" type="submit" name="action">Sign Up</button>
-    </div>
-    <div class="jumbotron-whitespace">
-     <span class="jumbotron-text">Already a member?</span><span><a href="{{ url_for('login')}}">Sign in here</a></span>  
-    </div>
+      <div>
+        <button
+          class="btn-large waves-effect btn-addbook"
+          type="submit"
+          name="action"
+        >
+          Sign Up
+        </button>
+      </div>
+      <div class="jumbotron-whitespace">
+        <span class="jumbotron-text">Already a member?</span
+        ><span><a href="{{ url_for('login')}}">Sign in here</a></span>
+      </div>
     </div>
   </form>
 </div>
