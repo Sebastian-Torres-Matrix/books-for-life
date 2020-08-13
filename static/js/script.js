@@ -1,6 +1,5 @@
-
-$(document).ready(function(){
-    $('.tooltipped').tooltip();
-    $('.modal').modal();
-    $('.sidenav').sidenav();
+$(document).ready(function () {
+  $(".tooltipped").tooltip();
+  $(".modal").modal();
+  $(".sidenav").sidenav()
 });
