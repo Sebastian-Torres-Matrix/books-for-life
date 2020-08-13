@@ -61,12 +61,14 @@
           <hr />
 
           <div class="activator description-card">
-            Description<i class="material-icons right">expand_more</i>
+            Description<i class="material-icons right tooltipped"
+                data-tooltip="Expand">expand_more</i>
           </div>
 
           <div class="card-reveal">
             <span class="card-title grey-text text-darken-4"
-              ><i class="material-icons right">close</i
+              ><i class="material-icons right tooltipped"
+                data-tooltip="Close">close</i
               ><strong>{{ review.title }}</strong></span>
             <hr />
             <p class="reveal-content">{{ review.description }}</p>
@@ -82,21 +84,8 @@
                 ><i class="material-icons">edit</i></a
               ></span
             >
-            <!--
-          <span
-              ><a
-                href="{{url_for('delete_review', review_id=review._id)}}"
-                class="tooltipped"
-                data-position="bottom"
-                data-tooltip="Delete"
-                ><i class="material-icons">delete</i></a
-              ></span
-            >
-            <span class="right"
-              >
-              -->
 
-            
+    
             <span
               ><a
                 href="#{{ review.title }}"

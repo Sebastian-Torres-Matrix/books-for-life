@@ -39,6 +39,10 @@ body {
   flex: 1 0 auto;
 }
 
+h3 {
+    font: 700;
+}
+
 /*NAVBAR*/
 
 #menu-icon {
@@ -95,6 +99,9 @@ nav ul {
   margin-right: auto;
   overflow: visible;
   background-color: rgba(0, 0, 0, 0.85);
+  -webkit-box-shadow: 1px -9px 40px 8px rgba(,0,0,0.64);
+-moz-box-shadow: 1px -9px 40px 8px rgba(0,0,0,0.64);
+box-shadow: 1px -9px 40px 8px rgba(0,0,0,0.64);
 }
 
 img {
@@ -164,9 +171,18 @@ img {
   background-color: #c60e00;
 }
 
+.btn-reset:hover {
+  background-color: #d64136;
+}
+
 .btn-submit,
 .btn-addbook {
   background-color: #528c59;
+}
+
+.btn-submit:hover,
+.btn-addbook:hover {
+  background-color: #55995d;
 }
 
 /*FOOTER*/
@@ -193,3 +209,7 @@ img {
 }
 
 /*MEDIA QUERIES*/
+
+.socialmedia-icon {
+    transform: scale(1.1) !important;
+}
