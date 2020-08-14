@@ -145,6 +145,7 @@ amazon_url | String
 * [Am I Responsive?](http://ami.responsivedesign.is/#) 
 
 ## Testing :electric_plug:
+* Testing information can be found in this separate file: TESTING.md]() 
 
 ## Deployment
 ##### Clone Books for Life from Github:
