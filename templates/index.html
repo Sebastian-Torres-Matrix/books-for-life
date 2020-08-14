@@ -1,6 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 
+    <!-- Jumbotron -->
   <div class="container jumbotron center-align">
+  <!-- Flashed message -->
             <p>
               {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -15,7 +17,7 @@
     <div>
       <h1>Welcome to Books for Life</h1>
     </div> 
-
+    <!-- Button -->
     <div class="btn-whitespace">
       <a class="btn-large waves-effect btn-submit" href="{{ url_for('login')}}"
         >Sign In</a

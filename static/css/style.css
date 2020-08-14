@@ -45,6 +45,10 @@ body {
   margin-left: 2rem;
 }
 
+.brand-logo:hover {
+  opacity: 0.8;
+}
+
 nav ul {
   margin: 0 3rem 0 0;
 }
@@ -154,6 +158,10 @@ input.validate {
   font-size: 4rem;
 }
 
+.socialmedia-icon {
+    color: #fff;
+}
+
 /*BUTTONS*/
 .btn-whitespace {
   margin: 3rem 0 1.5rem 0;
@@ -200,6 +208,5 @@ input.validate {
 
 .list-inline > li {
   display: inline-block;
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
+  padding: 0 1rem;
 }

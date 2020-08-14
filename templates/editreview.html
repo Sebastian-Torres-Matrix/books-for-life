@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-  
+  <!-- Jumbotron -->
     <div class="container jumbotron">
     <div>
+    <!-- Form -->
         <h3 class="form-heading center-align">Edit Book</h3>
     </div>
 
@@ -38,7 +39,7 @@
           <input value="{{ review.amazon_url }}" name="amazon_url" id="amazon_url" type="url" class="validate" required>          
         </div>
       </div>
-
+      <!-- Submit button -->
       <div class="btn-whitespace center-align">
       <button class="btn-large waves-effect btn-submit" type="submit" name="action">Update</button>
       </div>

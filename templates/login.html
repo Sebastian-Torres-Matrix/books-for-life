@@ -1,5 +1,7 @@
 {% extends 'base.html' %} {% block content %}
+<!-- Jumbotron -->
 <div class="container jumbotron">
+    <!-- Flashed message -->
         <p>
               {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -14,7 +16,7 @@
   <div class="center-align">
     <h3>LOGIN</h3>
   </div>
-
+<!-- Form -->
   <form class="col s12" action="/login" method="POST">
     <div class="row">
       <div class="input-field col s12">
@@ -52,6 +54,7 @@
 
     <div class="center-align">
       <div class="btn-whitespace">
+      <!-- Submit button -->
         <button
           class="btn-large waves-effect btn-submit"
           type="submit"

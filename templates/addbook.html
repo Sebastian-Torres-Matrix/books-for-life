@@ -1,11 +1,11 @@
 {% extends 'base.html' %} {% block content %}
 
-
+<!-- Jumbotron -->
   <div class="container jumbotron">
     <div class="center-align">
       <h3 class="form-heading">Add Book</h3>
     </div>
-
+<!-- Form -->
     <form class="col s12" action="{{ url_for('add_book') }}" method="POST">
       <div class="row">
         <div class="input-field col s12">
@@ -81,6 +81,7 @@
       </div>
 
       <div class="center-align btn-whitespace">
+      <!-- Submit button -->
         <button
           class="btn-large waves-effect btn-submit"
           type="submit"
