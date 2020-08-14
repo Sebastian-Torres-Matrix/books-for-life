@@ -7,26 +7,31 @@ from os import path
 if os.path.exists("env.py"):
     import env
 
+# Create an instance of flask and assign it to "app"
 app = Flask(__name__)
 
+# Configure and pass to os environment
 app.config["MONGO_DBNAME"] = 'book_manager'
 app.config['MONGO_URI'] = os.environ['MONGO_URI']
+
+# Configure secret key and pass to os environment
 app.secret_key = os.environ.get('SECRET_KEY')
 
+# Connection to MongoDB database
 mongo = PyMongo(app)
 
-
+# Landing page
 @app.route('/')
 @app.route('/index')
 def index():
     return render_template("index.html")
 
 
+# Search book
 @app.route('/reviews')
 def reviews():
     reviews = mongo.db.reviews.find()
     return render_template("reviews.html", reviews=reviews)
-
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
@@ -34,16 +39,15 @@ def search():
     reviews = mongo.db.reviews.find({"$text": {"$search": query}})
     return render_template("bookgallery.html", reviews=reviews)
 
-
+# Book gallery
 @app.route('/gallery')
 def gallery():
     return render_template("bookgallery.html", reviews=mongo.db.reviews.find())
 
-
+# Add book
 @app.route('/book')
 def book():
     return render_template("addbook.html")
-
 
 @app.route('/add_book', methods=['POST'])
 def add_book():
@@ -60,13 +64,14 @@ def add_book():
     flash("Added book successful!")
     return redirect(url_for('gallery'))
 
-
+# Edit book
 @app.route('/edit_review/<review_id>')
 def edit_review(review_id):
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     return render_template("editreview.html", review=review)
 
 
+# Update book
 @app.route('/update_review/<review_id>', methods=["POST"])
 def update_review(review_id):
     review = mongo.db.reviews
@@ -82,6 +87,7 @@ def update_review(review_id):
     return redirect(url_for('gallery'))
 
 
+# Delete book
 @app.route('/delete_review/<review_id>')
 def delete_review(review_id):
     mongo.db.reviews.delete_one({'_id': ObjectId(review_id)})
@@ -89,6 +95,7 @@ def delete_review(review_id):
     return redirect(url_for('gallery'))
 
 
+# Login user
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -114,7 +121,7 @@ def login():
 
     return render_template("login.html")
 
-
+# Signup user
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
@@ -138,6 +145,7 @@ def signup():
     return render_template("signup.html")
 
 
+# Logout user
 @app.route('/logout')
 def logout():
     session.clear()

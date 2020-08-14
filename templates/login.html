@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-<div class="container jumbotron jumbotron-landingpage">
+<div class="container jumbotron">
   <div class="center-align">
     <h3>LOGIN</h3>
   </div>
@@ -17,7 +17,7 @@
           maxlength="15"
           data-length="15"
           pattern="^[a-zA-Z0-9]{5,15}$"
-          class="validate form-control"
+          class="validate"
           required
         />
       </div>
@@ -33,7 +33,7 @@
           maxlength="15"
           data-length="15"
           pattern="^[a-zA-Z0-9]{5,15}$"
-          class="validate form-control"
+          class="validate"
           required
         />
       </div>
@@ -42,7 +42,7 @@
     <div class="center-align">
       <div class="btn-whitespace">
         <button
-          class="btn-large waves-effect btn-addbook"
+          class="btn-large waves-effect btn-submit"
           type="submit"
           name="action"
         >

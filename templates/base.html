@@ -16,10 +16,10 @@
 			<div class="nav-wrapper">
 				<a href="{{url_for('index')}}" class="brand-logo">Books For Life</a>
 				<a href="#" class="sidenav-trigger" data-target="mobile-demo"><i class="material-icons" id="menu-icon">menu</i></a>
-				<ul class="right hide-on-med-and-down">
-					<li><a href="{{url_for('gallery')}}">Book Gallery</a></li>
-					<li><a href="{{url_for('book')}}">Add Book</a></li>
-					<li><a href="{{url_for('logout')}}">Sign Out</a></li>
+				<ul class="right hide-on-med-and-down sss">
+					<li><a class="navlinks-fs" href="{{url_for('gallery')}}">Book Gallery</a></li>
+					<li><a class="navlinks-fs" href="{{url_for('book')}}">Add Book</a></li>
+					<li><a class="navlinks-fs" href="{{url_for('logout')}}">Sign Out</a></li>
 				</ul>
                      </div>  
 		</nav>	
@@ -39,11 +39,11 @@
 		<div class="container container-footer">
 			<div class="row">
 				<div class="col s6">
-					<h5 class="white-text">About</h5>
-					<p class="grey-text text-lighten-4">lorem ipsum</p>
+					<h5><strong>About</strong></h5>
+					<h5>lorem ipsum</h5>
 				</div>
-				<div class="col s6 center-align">
-					<h5 class="white-text">Social Media</h5>
+				<div class="col s6 center-align"> 
+                <h5><strong>Social Media</strong> </h5>
 					<ul class="list-inline">
 						<li><a class="grey-text text-lighten-3 tooltipped socialmedia-icon" data-tooltip="Facebook" target="_blank" href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i></a></li>
 						<li><a class="grey-text text-lighten-3 tooltipped socialmedia-icon" data-tooltip="Instagram" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram-square"></i></a></li>
@@ -53,7 +53,7 @@
 			</div>
 		</div>
 		<div class="footer-copyright center-align">
-			<div class="container">Copyright © Books For Life 2020. All rights reserved.</div>
+			<div class="container"><h6>Copyright © Books For Life 2020. All rights reserved.</h6></div>
         </div>
 	</footer>
     

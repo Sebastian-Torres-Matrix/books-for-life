@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
   
-    <div class="container jumbotron jumbotron-landingpage">
+    <div class="container jumbotron">
     <div>
         <h3 class="form-heading center-align">Edit Book</h3>
     </div>
@@ -11,36 +11,36 @@
         <div class="input-field col s12">
         <i class="material-icons prefix">create</i>
         <label for="title">Title: </label>
-          <input value="{{ review.title }}" name="title" id="title" type="text" data-length="20" class="validate">
+          <input value="{{ review.title }}" name="title" id="title" type="text" data-length="40" minlength="2" class="validate" required>
         </div>
 
         <div class="input-field col s12">
         <i class="material-icons prefix">person</i>
         <label for="author">Author: </label>
-          <input value="{{ review.author }}" name="author" id="author" type="text" data-length="20" class="validate">
+          <input value="{{ review.author }}" name="author" id="author" type="text" data-length="40" minlength="2" class="validate" required>
         </div>
 
         <div class="input-field col s12">
         <i class="material-icons prefix">collections</i>
         <label for="description">Description: </label>
-          <input value="{{ review.description }}" name="description" id="description" type="text" data-length="50" class="validate">
+          <input value="{{ review.description }}" name="description" id="description" type="text" data-length="150" minlength="5" class="validate" required>
         </div>
 
         <div class="input-field col s12 ">
         <i class="material-icons prefix">link</i>
         <label for="cover_url">Link To Book Cover Image: </label>
-          <input value="{{ review.cover_url }}" name="cover_url" id="cover_url" type="text" class="validate">
+          <input value="{{ review.cover_url }}" name="cover_url" id="cover_url" type="url" class="validate" required>
         </div>
 
         <div class="input-field col s12">
         <i class="material-icons prefix">link</i>
         <label for="amazon_url">Link to URL at Amazon: </label>
-          <input value="{{ review.amazon_url }}" name="amazon_url" id="amazon_url" type="text" class="validate">          
+          <input value="{{ review.amazon_url }}" name="amazon_url" id="amazon_url" type="url" class="validate" required>          
         </div>
       </div>
 
       <div class="btn-whitespace center-align">
-      <button class="btn-large waves-effect btn-addbook" type="submit" name="action">Update</button>
+      <button class="btn-large waves-effect btn-submit" type="submit" name="action">Update</button>
       </div>
     </form>
 </div>

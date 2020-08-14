@@ -12,11 +12,6 @@ html {
   font-size: 10px;
 }
 
-.form {
-  height: 50%;
-  width: 50%;
-}
-
 html,
 body {
   height: 100%;
@@ -43,12 +38,13 @@ h3 {
   font: 700;
 }
 
-/*NAVBAR*/
-
-#menu-icon {
-  color: #fff !important;
+/*FLASH MESSAGES */
+.flashes h4 {
+  line-height: 2;
+  color: #54ca54;
 }
 
+/*NAVBAR*/
 .brand-logo {
   margin-left: 2rem;
 }
@@ -57,39 +53,12 @@ nav ul {
   margin: 0 3rem 0 0;
 }
 
-/*FORMS*/
-
+/*MODALS*/
 #modal-book {
   width: 30%;
 }
 
-.modal-content {
-  color: #000;
-}
-
-/*BUTTONS*/
-
-.fab {
-  font-size: 3rem;
-}
-
 /*CARDS*/
-
-.ccc {
-  margin-bottom: 7rem;
-}
-
-#btn-lp {
-  margin: 3rem 0 1.5rem 0;
-}
-
-.sidenav {
-  background-color: rgba(0, 0, 0, 0.85);
-}
-
-.sidenav li > a {
-  color: #fff;
-}
 
 .card {
   max-width: 30rem;
@@ -112,33 +81,41 @@ img {
 }
 
 .reveal-content {
-  color: #000;
   margin-top: 2rem;
 }
 
-/*COLORS  #E8D0A9*/
+.cards-whitespace {
+    margin-bottom: 7rem;
+}
 
+/*COLORS*/
 #color-footer,
 #color-nav {
   background-color: #dabe8f !important;
 }
 
-.material-icons {
-  color: #dabe8f !important;
+.modal-content,
+.reveal-content {
+  color: #000;
 }
 
-.flashes h4 {
-  line-height: 2;
-  color: #fff;
+.sidenav {
+  background-color: rgba(0, 0, 0, 0.85);
 }
 
+#menu-icon {
+  color: #fff !important;
+}
+
+.sidenav li > a, 
+input.validate {
+    color: #fff;
+}
+
+/*JUMBOTRON*/
 .jumbotron-text {
   margin-right: 1rem;
   line-height: 0.5rem;
-}
-
-#searchbox {
-  margin-top: 1rem;
 }
 
 .jumbotron {
@@ -149,10 +126,25 @@ img {
   max-width: 88rem;
 }
 
+/*SEARCHBOX*/
 .searchbox-container {
   margin-bottom: 5rem;
   margin-top: 4rem;
   max-width: 117rem;
+}
+
+/*ICONS*/
+.material-icons {
+  color: #dabe8f !important;
+}
+
+.fab {
+  font-size: 4rem;
+}
+
+/*BUTTONS*/
+.btn-whitespace {
+  margin: 3rem 0 1.5rem 0;
 }
 
 .btn-large,
@@ -170,18 +162,15 @@ img {
   background-color: #d64136;
 }
 
-.btn-submit,
-.btn-addbook {
+.btn-submit {
   background-color: #528c59;
 }
 
-.btn-submit:hover,
-.btn-addbook:hover {
+.btn-submit:hover {
   background-color: #55995d;
 }
 
 /*FOOTER*/
-
 .footer {
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -201,10 +190,4 @@ img {
   display: inline-block;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
-}
-
-/*MEDIA QUERIES*/
-
-.socialmedia-icon {
-  transform: scale(1.1) !important;
 }

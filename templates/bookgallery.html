@@ -1,11 +1,9 @@
 {% extends 'base.html' %} {% block content %}
 
-<div id="searchbox">
-
   <div class="container jumbotron searchbox-container">
     <div class="center-align">
       <h3>BOOK GALLERY</h3>
-      <p>
+      <p class="container">
               {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
@@ -20,20 +18,20 @@
 
 
   <!--Search Bar-->
- 
   <div class="row">
       
+       <!-- Form -->
       <form action="{{ url_for('search') }}" method="POST">
         <div class="row valign-wrapper center-align">
-          <div class="input-field input-search col s6 m7 l8">
+          <div class="input-field input-search col s6 l8">
             <i class="material-icons prefix">search</i>
             <input type="text" name="query" id="query" minlength="3" class="validate" required />
             <label for="query">Search Book</label>
           </div>
 
-          <div class="col s6 m5 l4">
+          <div class="col s6 l4">
             <a href="{{ url_for('gallery') }}" class="btn btn-reset">Reset</a>
-            <button type="submit" class="btn btn-addbook">Search</button>
+            <button type="submit" class="btn btn-submit">Search</button>
           </div>
 
         </div>
@@ -45,7 +43,7 @@
   {% for review in reviews %}
   <div class="row">
     <div class="container">
-      <div class="col s12 m6 l4">
+      <div class="col s12 m6 l4 cards-whitespace">
         <div class="card sticky-action hoverable">
           
           <div class="card-image waves-effect waves-block waves-light">
@@ -55,7 +53,7 @@
 
           <div class="card-content">
             <span class="card-title activator"><strong>{{ review.title }}</strong></span>
-            <p>{{ review.author}}</p>
+            <h5>{{ review.author}}</h5>
           </div>
           
           <hr />
@@ -71,7 +69,7 @@
                 data-tooltip="Close">close</i
               ><strong>{{ review.title }}</strong></span>
             <hr />
-            <p class="reveal-content">{{ review.description }}</p>
+            <h5 class="reveal-content">{{ review.description }}</h5>
           </div>
 
           <div class="card-action">
@@ -135,6 +133,6 @@
       </div>
     </div>
     {% endfor %}
-  </div>
+
   
 {% endblock %}
