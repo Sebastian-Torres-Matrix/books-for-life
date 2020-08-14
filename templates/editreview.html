@@ -11,19 +11,19 @@
         <div class="input-field col s12">
         <i class="material-icons prefix">create</i>
         <label for="title">Title: </label>
-          <input value="{{ review.title }}" name="title" id="title" type="text" data-length="40" minlength="2" class="validate" required>
+          <input value="{{ review.title }}" name="title" id="title" type="text" data-length="40" maxlength="40" minlength="2" class="validate" required>
         </div>
 
         <div class="input-field col s12">
         <i class="material-icons prefix">person</i>
         <label for="author">Author: </label>
-          <input value="{{ review.author }}" name="author" id="author" type="text" data-length="40" minlength="2" class="validate" required>
+          <input value="{{ review.author }}" name="author" id="author" type="text" data-length="20" maxlength="20" minlength="2" class="validate" required>
         </div>
 
         <div class="input-field col s12">
         <i class="material-icons prefix">collections</i>
         <label for="description">Description: </label>
-          <input value="{{ review.description }}" name="description" id="description" type="text" data-length="150" minlength="5" class="validate" required>
+          <input value="{{ review.description }}" name="description" id="description" type="text" data-length="700" maxlength="700" minlength="10" class="validate" required>
         </div>
 
         <div class="input-field col s12 ">
