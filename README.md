@@ -1,6 +1,6 @@
 # BOOKS FOR LIFE
 ![Multi Device Website Mockup](static/images/mockup-min.png)
-Visit the live website: [Books For Life](https://books-for-life.herokuapp.com/)
+:books: Visit the live website: [Books For Life](https://books-for-life.herokuapp.com/)
 
 ## Introduction 
 Welcome to Books For Life!
