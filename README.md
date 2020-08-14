@@ -4,6 +4,10 @@ Visit the live website: [Books For Life](https://books-for-life.herokuapp.com/)
 
 ## Introduction 
 Welcome to Books For Life!
+Books for Life is the place for all booklovers. Here you can find all your favorite books.
+You can also add, edit, delete and store all your books in one place! 
+If you really want to buy a book, you can do that also through our cooperation with affiliates.
+Gain knowledge, grow and develop as a person with Books for Life :bulb:  
 
 ## Table of Contents
 * [UX](#ux)
