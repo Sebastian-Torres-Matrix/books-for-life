@@ -104,13 +104,10 @@ amazon_url | String
 * The ability to sort books in the gallery
 * Choose books by genre
 * Upvote books or/and save books as favorites
-* Add reviews on books
 * Have a personal account, with personal information, details and favorite books
-* Reset password
+* Reset password and create a new password
 * Input email and send newsletter to users email account
 * Pagination when there are many books accumulated in the gallery 
-
-
 
 ## Technologies Used :computer: 
 
@@ -122,7 +119,7 @@ amazon_url | String
 
 #### Libaries & Frameworks
 * [Flask](https://flask.palletsprojects.com/en/1.1.x/ ) 
-* [Bootstrap](https://getbootstrap.com/) 
+* [Materialize](https://materializecss.com/) 
 * [FontAwesome](https://fontawesome.com/)  
 * [JQuery](https://jquery.com/) 
 
@@ -137,7 +134,7 @@ amazon_url | String
 * [Gitpod](https://www.gitpod.io/) 
 * [Google Fonts](https://fonts.google.com/)
 * [Heroku](https://dashboard.heroku.com/apps)
-* [Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/) 
+* [Am I Responsive?](http://ami.responsivedesign.is/#) 
 
 ## Testing :electric_plug:
 
@@ -146,13 +143,27 @@ amazon_url | String
 ## Credits 
 
 #### Content
-
-    
+* These websites, for the excellent content, with explanations and tutorials:
+    * [StackOverflow](https://stackoverflow.com/)
+    * [W3Schools](https://www.w3schools.com/)
+    * [MongoDB Documentation](https://docs.mongodb.com/)
+    * [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/)
+    * [Jinja Documentation](https://jinja.palletsprojects.com/en/2.11.x/)
+ 
 #### Media
-
+* [Favicon.io](https://favicon.io/)
+    * For the favicon used in the project.
+* [Optimizilla](https://imagecompressor.com/)
+    * Image compressor to shrink JPEG and PNG images. 
+* [Pexels](https://www.pexels.com/photo/assorted-books-on-shelf-1370295/) 
+    * For the embedded background image used in the project.
 
 #### Acknowledgements
-
+* Fellow Code Institute students on [Slack](https://slack.com/intl/en-se/). For the support and feedback.
+* Tutor support and Student care from Code Institute. For the support, guidance and feedback.
+* [Simen Daehlin](https://dehlin.dev/), for excellent mentorship, with great guidance and feedback. :trophy:
+    * [Github](https://github.com/Eventyret)
+    * [Linkedin](https://uk.linkedin.com/in/simendaehlin)
  
 ## Disclaimer 
 * The content of this website is for educational purpose only. :heavy_exclamation_mark:
