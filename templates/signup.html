@@ -1,5 +1,16 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container jumbotron">
+        <p>
+              {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                <div class="row flashes">
+                    <h4 class="center-align">{{ message }}</h4>
+                </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+      </p>
   <div class="center-align">
     <h3>SIGN UP</h3>
   </div>
