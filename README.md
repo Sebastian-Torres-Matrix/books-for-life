@@ -145,7 +145,7 @@ amazon_url | String
 * [Am I Responsive?](http://ami.responsivedesign.is/#) 
 
 ## Testing :electric_plug:
-* Testing information can be found in this separate file: TESTING.md]() 
+* Testing information can be found in this separate file: [TESTING.md](https://github.com/Sebastian-Torres-Matrix/books-for-life/blob/master/TESTING.md) 
 
 ## Deployment
 ##### Clone Books for Life from Github:
