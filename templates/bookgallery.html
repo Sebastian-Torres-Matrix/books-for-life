@@ -1,9 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
   <div class="container jumbotron searchbox-container">
-    <div class="center-align">
-      <h3>BOOK GALLERY</h3>
-      <p class="container">
+        <p>
               {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
@@ -14,6 +12,9 @@
             {% endif %}
         {% endwith %}
       </p>
+    <div class="center-align">
+      <h3>BOOK GALLERY</h3>
+
     </div>
 
 

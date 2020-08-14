@@ -16,20 +16,26 @@
 		<nav id="color-nav" >
 			<div class="nav-wrapper">
 				<a href="{{url_for('index')}}" class="brand-logo">Books For Life</a>
+                {% if session.user %}
 				<a href="#" class="sidenav-trigger" data-target="mobile-demo"><i class="material-icons" id="menu-icon">menu</i></a>
 				<ul class="right hide-on-med-and-down sss">
 					<li><a class="navlinks-fs" href="{{url_for('gallery')}}">Book Gallery</a></li>
 					<li><a class="navlinks-fs" href="{{url_for('book')}}">Add Book</a></li>
 					<li><a class="navlinks-fs" href="{{url_for('logout')}}">Sign Out</a></li>
 				</ul>
+                {% else %}
+                {% endif %}
                      </div>  
 		</nav>	
+        {% if session.user %}
 				<ul class="sidenav" id="mobile-demo">
 					<li><a class="sidenav-links" href="{{url_for('gallery')}}">Book Gallery</a></li>
 					<li><a class="sidenav-links" href="{{url_for('book')}}">Add Book</a></li>
                     <li><a class="sidenav-links" href="{{url_for('logout')}}">Sign Out</a></li>
                     </div>
 				</ul>
+                {% else %}
+                {% endif %}
            
     <div class="content">
 {% block content %}
