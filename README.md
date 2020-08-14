@@ -31,41 +31,45 @@ Welcome to Books For Life!
 ## UX 
 
 #### Project Goals :dart: 
-The aim of the project is to create a book website where users can search and find books that they want to read, 
-books that they already have read and want to give a review or save as a favorite on their personal account,
-also the user can buy the book through an affiliate link.
+The aim of the project is to create a book website where users can add/edit delete books from a book gallery, search and find books that they want to read, 
+save books that they already have read and also buy the books the users like through an affiliate link.
 
 #### Site Owner Goals:
-* Provide a platform for book lovers to find books they like
-* Earn money on each book purchased via a affiliate link from the website.
+* Provide a platform for book lovers to find and add books they love
+* Earn money on each book purchased via a Amazon affiliate link from the website
 * Collect user information through site analytics to optimize the website for users
 
 #### User Stories :clapper: 
-* I want to be able to create a personal account
-* I want to be able to delete my personal account
-* I want to be able to save my favorite books on my personal account
-* I want to be able to see book reviews from other users
-* I want to see how popular the book is, through thumbs up or thumbs down
-* I want to be able to search books by genre
-* I want to see the book title, cover of the book and the author name
-* I want to be able to buy the book by using a link that takes my to a book shop
-* I want to be able to delete or edit my reviews
+* I want to be able to search books for specific books
+* I want to see the book title, the authors name, some information about the book and a visual cover image of the book
+* I want to be able to buy the books i like
+* I want to be able to add books
+* I want to be able to delete or edit books 
+* I want to be able to sign up and login
 * I want to be able to sign out
 * I want the website to responsive on my laptop, iPad and mobile phone
-
 
 #### Design Choices :art:
 
 * __Icons__
-Are being applied from Font Awesome. That has a large collection to choose from. 
+Icons are being applied from Font Awesome and Materialize.
+
+* __Fonts__
+* Roboto is the primary font used throughout the project
+* Sans-serif is chosen as the fallback font
 
 * __Colors__
-* Wheat colour: #E8D0A9
-* White colour: #FFF
+* Brandy: #dabe8f 
+* White color: #fff
+* Black color: #000 and rgba(0, 0, 0, 0.85)
+* Guardsman Red: #c60e00
+* Valencia: #d64136;
+* Spring Leaves: #528c59
+* Fruit Salad: #55995d
 
 #### Wireframes
 * The wireframes were created using [Balsamiq](https://balsamiq.com/).
-    * Here is the link to see the [Wireframes]()
+    * Here is the link to see the [Wireframes](https://github.com/Sebastian-Torres-Matrix/books-for-life/tree/master/wireframes)
 
 #### Databases
 
