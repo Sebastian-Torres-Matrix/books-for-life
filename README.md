@@ -1,6 +1,6 @@
-# BOOKS FOR LIFE
+# BOOKS FOR LIFE :books:
 ![Multi Device Website Mockup](static/images/mockup-min.png)
-:books: Visit the live website: [Books For Life](https://books-for-life.herokuapp.com/)
+Visit the live website: [Books For Life](https://books-for-life.herokuapp.com/)
 
 ## Introduction 
 Welcome to Books For Life!
@@ -74,7 +74,7 @@ ID | Data Type
 ------------- | -------------
 _id | Int
 username | String
-email | String
+password | String
 
 Reviews Collection
 ID | Data Type
@@ -82,11 +82,9 @@ ID | Data Type
 _id | Int
 title | String
 author | String
-genre | String
-upvote | Array
-downvote | Array
-upvote_total | Int
-downvote_total | Int
+description | String
+cover_url | String
+amazon_url | String
 
 
 ## Features :mag_right:
