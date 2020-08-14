@@ -55,14 +55,14 @@ save books that they already have read and also buy the books the users like thr
 
 #### Design Choices :art:
 
-* __Icons__
+__Icons__
 Icons are being applied from Font Awesome and Materialize.
 
-* __Fonts__
-* Roboto is the primary font used throughout the project
-* Sans-serif is chosen as the fallback font
+ __Fonts__
+Roboto is the primary font used throughout the project
+Sans-serif is chosen as the fallback font
 
-* __Colors__
+__Colors__
 * Brandy: #dabe8f 
 * White color: #fff
 * Black color: #000 and rgba(0, 0, 0, 0.85)
@@ -147,6 +147,52 @@ amazon_url | String
 ## Testing :electric_plug:
 
 ## Deployment
+##### Clone Books for Life from Github:
+The project was created by using the IDE services of [Gitpod](https://www.gitpod.io/), from Gitpod the project was committed to Git and pushed to Github from the master branch.
+
+This process was taken to deploy the website, from Github repositories:
+1. You can log into [Github Pages](https://pages.github.com/)
+2. From the repositories shown, choose: [Sebastian-Torres-Matrix/books-for-life](https://github.com/Sebastian-Torres-Matrix/books-for-life).
+3. On the menu bar at the top, to the right you can click on __Settings__.
+4. From there you can scroll down to the section __Github Pages__.
+5. On the headline __Source__ you can choose __master branch__, from the dropdown menu.
+6. When choosing __master branch__, the master branch is deployed and also up to date: with access to the link to: [Books for Life](http://books-for-life.herokuapp.com/index)
+7. During the project, it has always been the master branch that has been deployed to Github Pages.
+
+If you want to run this project locally, you can clone this repository from Gitbuh Pages by following this steps:
+1. Use this link to get to the Github repository: https://github.com/Sebastian-Torres-Matrix/books-for-life .
+2. On the menu bar at the top, to the right, choose the green button named __Clone or download__.
+3. In the __Clone with HTTPS__, you can copy the __web URL__.
+4. Open __Git bash__, in your __local IDE__.
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type git clone, and use the __web URL__ from __Clone with HTTPS__: https://github.com/Sebastian-Torres-Matrix/books-for-life.git
+7. Press __Enter__, and your local clone will be created.
+
+For more information about how to Git Clone, you can find it [here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+
+#### Deploying Books for Life to Heroku:
+1: Create a requirements.txt file using the following command.
+```
+pip3 freeze > requirements.txt
+```
+2: Create a Procfile with the following command.
+```
+echo web: python3 app.py > Procfile
+```
+3: Push these created files to your repository.
+4: Create a new app for this project on the Heroku Dashboard.
+5: Select your deployment method by clicking on the deployment method button and select GitHub.
+6: On the dashboard, set the following config variables:
+```
+Key: Value
+IP:	0.0.0.0
+PORT: 5000
+MONGO_URI:	mongodb+srv://root:<password>@myfirstcluster-x0xst.mongodb.net/<dbname>?retryWrites=true&w=majority
+SECRET_KEY:	"your_secret_key"
+```
+7: Click the deploy button on the Heroku dashboard.
+8: The site has been deployed to Heroku.
+
 
 ## Credits 
 
