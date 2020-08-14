@@ -90,16 +90,26 @@ amazon_url | String
 ## Features :mag_right:
 
 #### Existing Features
-* Users can create a personal account, with a unique username to login, add books and leave book reviews
-* Users can delete their profile account if they wish to do so
-* Users can sign in and also sign out
-* Users can add books on the website
-* Users can add, edit and delete book reviews
-* Users can save favorite books to their personal account
-* Users can choose book gallery based on genre
-* Users can buy books through link to Amazon
+* Users can sign up to Books for Life, with a unique username and password
+* Users can log in to the website, with their unique username and password
+* Users can sign out from the website
+* Users can create and add books to the book gallery
+* Users can edit and update existing book reviews
+* Users can delete existing books from the book gallery
+* Users can search for specific books in the book gallery
+* Users can buy books through a Amazon link 
+* Users can follow Books for Life through social media, via social media icons
 
 #### Features Left to Implement
+* The ability to sort books in the gallery
+* Choose books by genre
+* Upvote books or/and save books as favorites
+* Add reviews on books
+* Have a personal account, with personal information, details and favorite books
+* Reset password
+* Input email and send newsletter to users email account
+* Pagination when there are many books accumulated in the gallery 
+
 
 
 ## Technologies Used :computer: 
