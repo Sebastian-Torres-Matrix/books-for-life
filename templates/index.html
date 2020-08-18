@@ -1,33 +1,27 @@
 {% extends 'base.html' %} {% block content %}
-
-    <!-- Jumbotron -->
-  <div class="container jumbotron center-align">
+<!-- Jumbotron -->
+<div class="container jumbotron center-align">
   <!-- Flashed message -->
-            <div>
-              {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                <div class="row flashes">
-                    <h4 class="center-align">{{ message }}</h4>
-                </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-      </div>
-    <div>
-      <h1>Welcome to Books for Life</h1>
-    </div> 
-    <!-- Button -->
-    <div class="btn-whitespace">
-      <a class="btn-large waves-effect btn-submit" href="{{ url_for('login')}}"
-        >Sign In</a
-      >
+  <div>
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for
+    message in messages %}
+    <div class="row flashes">
+      <h4 class="center-align">{{ message }}</h4>
     </div>
-
-    <div class="jumbotron-whitespace">
-      <span class="jumbotron-text">Not a member yet?</span
-      ><span><a href="{{ url_for('signup')}}">Sign up here</a></span>
-    </div>
+    {% endfor %} {% endif %} {% endwith %}
   </div>
-
+  <div>
+    <h1>Welcome to Books for Life</h1>
+  </div>
+  <!-- Button -->
+  <div class="btn-whitespace">
+    <a class="btn-large waves-effect btn-submit" href="{{ url_for('login')}}"
+      >Sign In</a
+    >
+  </div>
+  <div class="jumbotron-whitespace">
+    <span class="jumbotron-text">Not a member yet?</span
+    ><span><a href="{{ url_for('signup')}}">Sign up here</a></span>
+  </div>
+</div>
 {% endblock %}

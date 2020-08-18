@@ -1,22 +1,19 @@
 {% extends 'base.html' %} {% block content %}
 <!-- Jumbotron -->
 <div class="container jumbotron">
-    <!-- Flashed messages -->
-        <div>
-              {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                <div class="row flashes">
-                    <h4 class="center-align">{{ message }}</h4>
-                </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-      </div>
+  <!-- Flashed messages -->
+  <div>
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for
+    message in messages %}
+    <div class="row flashes">
+      <h4 class="center-align">{{ message }}</h4>
+    </div>
+    {% endfor %} {% endif %} {% endwith %}
+  </div>
   <div class="center-align">
     <h3>SIGN UP</h3>
   </div>
-<!-- Form -->
+  <!-- Form -->
   <form class="col s12" action="/signup" method="POST">
     <div class="row">
       <div class="input-field col s12">
@@ -34,7 +31,6 @@
           required
         />
       </div>
-
       <div class="input-field col s12">
         <i class="material-icons prefix">lock</i>
         <label for="password">Password: </label>
@@ -51,10 +47,9 @@
         />
       </div>
     </div>
-
     <div class="center-align">
       <div class="btn-whitespace">
-      <!-- Sign up button -->
+        <!-- Sign up button -->
         <button
           class="btn-large waves-effect btn-submit"
           type="submit"

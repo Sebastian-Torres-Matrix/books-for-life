@@ -149,7 +149,7 @@ amazon_url | String
 * Testing information can be found in this separate file: [TESTING.md](https://github.com/Sebastian-Torres-Matrix/books-for-life/blob/master/TESTING.md) 
 
 ## Deployment
-##### Clone Books for Life from Github:
+### Clone Books for Life from Github:
 The project was created by using the IDE services of [Gitpod](https://www.gitpod.io/), from Gitpod the project was committed to Git and pushed to Github from the master branch.
 
 This process was taken to deploy the website, from Github repositories:
@@ -172,7 +172,7 @@ If you want to run this project locally, you can clone this repository from Gitb
 
 For more information about how to Git Clone, you can find it [here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
-#### Deploying Books for Life to Heroku:
+### Deploying Books for Life to Heroku:
 1: Create a requirements.txt file using the following command.
 ```
 pip3 freeze > requirements.txt
