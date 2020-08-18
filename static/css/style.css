@@ -50,6 +50,12 @@ body {
   margin-left: 2rem;
 }
 
+@media (max-width: 991.98px) {
+    .brand-logo {
+        margin-left: 0rem;
+    }
+}
+
 .brand-logo:hover {
   opacity: 0.8;
 }

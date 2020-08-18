@@ -10,13 +10,16 @@
 * [Python syntax checker](https://extendsclass.com/python-tester.html)
     - Was used to check Python validation.
 * [PEP online](http://pep8online.com/)
-    - Was used to check Python validation.
+    - Was used to check PEP8 validation.
 * [AutoPrefixer](https://autoprefixer.github.io/)
     - Was used to make sure that CSS3 was valid for all web browsers.
+* [Google Search Console](https://autoprefixer.github.io/)
+    - Was used to make sure that Responsive design worked on all devices.
+https://search.google.com/test/mobile-friendly?hl=sv
 * [Google Chrome](https://www.google.com/intl/sv/chrome/)
     - Was used to test the web browser.
 * [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools)
-    - Was used to test the responsive design for different devices. 
+    - Was used to for debugging. 
 
 #### User Stories Testing
 

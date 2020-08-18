@@ -56,20 +56,21 @@ save books that they already have read and also buy the books the users like thr
 #### Design Choices :art:
 
 __Icons__
-Icons are being applied from Font Awesome and Materialize.
+* Icons are being applied from [Font Awesome](https://fontawesome.com/) and [Materialize](https://materializecss.com/icons.html).
 
- __Fonts__
-Roboto is the primary font used throughout the project
-Sans-serif is chosen as the fallback font
+ __Typography__
+ *  [Google Fonts](https://fonts.google.com/) were used across the site:
+    * [Roboto](https://fonts.google.com/specimen/Roboto?query=roboto) is the primary font used throughout the project
+    * Sans-serif was chosen as the fallback font
 
 __Colors__
-* Brandy: #dabe8f 
-* White color: #fff
-* Black color: #000 and rgba(0, 0, 0, 0.85)
-* Guardsman Red: #c60e00
-* Valencia: #d64136;
-* Spring Leaves: #528c59
-* Fruit Salad: #55995d
+* Brandy: [#dabe8f](http://chir.ag/projects/name-that-color/#DABE8F) 
+* White color: [#fff](http://chir.ag/projects/name-that-color/#FFFFFF)
+* Black color: [#000](http://chir.ag/projects/name-that-color/#000000) and rgba(0, 0, 0, 0.85)
+* Guardsman Red: [#c60e00](http://chir.ag/projects/name-that-color/#C60E00)
+* Valencia: [#d64136](http://chir.ag/projects/name-that-color/#D64136)
+* Spring Leaves: [#528c59](http://chir.ag/projects/name-that-color/#528C59)
+* Fruit Salad: [#55995d](http://chir.ag/projects/name-that-color/#55995D)
 
 #### Wireframes
 * The wireframes were created using [Balsamiq](https://balsamiq.com/).
