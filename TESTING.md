@@ -1,6 +1,8 @@
 ## Testing
 :electric_plug:
 
+__Validators__
+
 * [W3C Markup Validation](https://validator.w3.org/)
     - Was used to check HTML5 validation.
 * [W3C CSS Validation](https://jigsaw.w3.org/css-validator/#validate_by_input)

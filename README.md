@@ -44,14 +44,14 @@ save books that they already have read and also buy the books the users like thr
 * Collect user information through site analytics to optimize the website for users
 
 #### User Stories :clapper: 
-* I want to be able to search books for specific books
-* I want to see the book title, the authors name, some information about the book and a visual cover image of the book
-* I want to be able to buy the books i like
-* I want to be able to add books
-* I want to be able to delete or edit books 
-* I want to be able to sign up and login
-* I want to be able to sign out
-* I want the website to responsive on my laptop, iPad and mobile phone
+* :white_check_mark: I want to be able to search books for specific books
+* :white_check_mark: I want to see the book title, the authors name, some information about the book and a visual cover image of the book
+* :white_check_mark: I want to be able to buy the books i like
+* :white_check_mark: I want to be able to add books
+* :white_check_mark: I want to be able to delete or edit books 
+* :white_check_mark: I want to be able to sign up and login
+* :white_check_mark: I want to be able to sign out
+* :white_check_mark: I want the website to responsive on my laptop, iPad and mobile phone
 
 #### Design Choices :art:
 
@@ -78,14 +78,14 @@ __Colors__
 
 #### Databases
 
-* Users Collection
+__Users Collection__
 ID | Data Type
 ------------- | -------------
 _id | Int
 username | String
 password | String
 
-* Reviews Collection
+__Reviews Collection__
 ID | Data Type
 ------------ | -------------
 _id | Int
