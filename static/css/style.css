@@ -175,11 +175,11 @@ input.validate {
 
 .btn-reset {
   margin-right: 1.5rem;
-  background-color: #c60e00;
+  background-color: #c60e00 !important;
 }
 
 .btn-reset:hover {
-  background-color: #d64136;
+  background-color: #d64136 !important;
 }
 
 .btn-submit {
@@ -209,4 +209,16 @@ input.validate {
 .list-inline > li {
   display: inline-block;
   padding: 0 1rem;
+}
+
+
+@media (max-width: 568px) {
+    .btn-search {
+        width: 45%;
+        padding: 0 0.4rem;
+        font-size: 0.6rem;
+        height: 2.6rem;
+        line-height: 2.6rem;
+        margin-right: 0.4rem
+    }
 }

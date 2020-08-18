@@ -24,15 +24,15 @@
   <div class="row">
       <form action="{{ url_for('search') }}" method="POST">
         <div class="row valign-wrapper center-align">
-          <div class="input-field input-search col s6 l8">
+          <div class="input-field input-search col s8 l8">
             <i class="material-icons prefix">search</i>
             <input type="text" name="query" id="query" minlength="3" class="validate" required />
             <label for="query">Search Book</label>
           </div>
 
-          <div class="col s6 l4">
-            <a href="{{ url_for('gallery') }}" class="btn btn-reset">Reset</a>
-            <button type="submit" class="btn btn-submit">Search</button>
+          <div class="col s4 l4">
+            <a href="{{ url_for('gallery') }}" class="btn btn-reset waves-effect btn-search">Reset</a>
+            <button type="submit" class="btn btn-submit waves-effect btn-search">Search</button>
           </div>
 
         </div>
@@ -44,7 +44,7 @@
   {% for review in reviews %}
   <div class="row">
     <div class="container">
-      <div class="col s12 m6 l4 cards-whitespace">
+      <div class="col s12 m6 xl4 cards-whitespace">
         <div class="card sticky-action hoverable">
           <!-- Card image -->
           <div class="card-image waves-effect waves-block waves-light">

@@ -31,7 +31,7 @@ def index():
 @app.route('/reviews')
 def reviews():
     reviews = mongo.db.reviews.find()
-    return render_template("reviews.html", reviews=reviews)
+    return render_template("bookgallery.html", reviews=reviews)
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
