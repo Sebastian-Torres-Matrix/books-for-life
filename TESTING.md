@@ -5,9 +5,11 @@
     - Was used to check HTML5 validation.
 * [W3C CSS Validation](https://jigsaw.w3.org/css-validator/#validate_by_input)
     - Was used to check CSS3 validation.
-* [JShint](https://jshint.com/)
+* [Esprima Syntax Validaton](https://esprima.org/index.html)
     - Was used to check Javascript validation.
 * [Python syntax checker](https://extendsclass.com/python-tester.html)
+    - Was used to check Python validation.
+* [PEP online](http://pep8online.com/)
     - Was used to check Python validation.
 * [AutoPrefixer](https://autoprefixer.github.io/)
     - Was used to make sure that CSS3 was valid for all web browsers.

@@ -2,7 +2,7 @@
 <!-- Jumbotron -->
 <div class="container jumbotron">
     <!-- Flashed message -->
-        <p>
+        <div>
               {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
@@ -12,7 +12,7 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}
-      </p>
+      </div>
   <div class="center-align">
     <h3>LOGIN</h3>
   </div>

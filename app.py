@@ -1,5 +1,7 @@
 import os
-from flask import Flask, render_template, flash, redirect, request, url_for, session
+from flask import (
+    Flask, render_template, flash,
+    redirect, request, url_for, session)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -20,6 +22,7 @@ app.secret_key = os.environ.get('SECRET_KEY')
 # Connection to MongoDB database
 mongo = PyMongo(app)
 
+
 # Landing page
 @app.route('/')
 @app.route('/index')
@@ -33,21 +36,25 @@ def reviews():
     reviews = mongo.db.reviews.find()
     return render_template("bookgallery.html", reviews=reviews)
 
+
 @app.route('/search', methods=['GET', 'POST'])
 def search():
     query = request.form.get("query")
     reviews = mongo.db.reviews.find({"$text": {"$search": query}})
     return render_template("bookgallery.html", reviews=reviews)
 
+
 # Book gallery
 @app.route('/gallery')
 def gallery():
     return render_template("bookgallery.html", reviews=mongo.db.reviews.find())
 
+
 # Add book
 @app.route('/book')
 def book():
     return render_template("addbook.html")
+
 
 @app.route('/add_book', methods=['POST'])
 def add_book():
@@ -63,6 +70,7 @@ def add_book():
     )
     flash("Added book successful!")
     return redirect(url_for('gallery'))
+
 
 # Edit book
 @app.route('/edit_review/<review_id>')
@@ -106,7 +114,7 @@ def login():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome back {}!".format(
+                flash("You have successfully logged in {}!".format(
                     request.form.get("username")))
                 return redirect(url_for(
                     'gallery', username=session["user"]))
@@ -120,6 +128,7 @@ def login():
             return redirect(url_for('login'))
 
     return render_template("login.html")
+
 
 # Signup user
 @app.route('/signup', methods=['GET', 'POST'])

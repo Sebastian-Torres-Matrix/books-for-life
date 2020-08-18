@@ -203,7 +203,8 @@ SECRET_KEY:	"your_secret_key"
     * [W3Schools](https://www.w3schools.com/)
     * [MongoDB Documentation](https://docs.mongodb.com/)
     * [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/)
-    * [Jinja Documentation](https://jinja.palletsprojects.com/en/2.11.x/)
+    * [Jinja Documentation](https://jinja.palletsprojects.com/en/2.11.x/) 
+    * [Werkzeug Documentation](https://jinja.palletsprojects.com/en/2.11.x/) 
  
 #### Media
 * [Favicon.io](https://favicon.io/)
