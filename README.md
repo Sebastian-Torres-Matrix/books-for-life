@@ -78,14 +78,14 @@ __Colors__
 
 #### Databases
 
-Users Collection
+* Users Collection
 ID | Data Type
 ------------- | -------------
 _id | Int
 username | String
 password | String
 
-Reviews Collection
+* Reviews Collection
 ID | Data Type
 ------------ | -------------
 _id | Int
@@ -185,13 +185,14 @@ echo web: python3 app.py > Procfile
 4: Create a new app for this project on the Heroku Dashboard.
 5: Select your deployment method by clicking on the deployment method button and select GitHub.
 6: On the dashboard, set the following config variables:
-```
-Key: Value
-IP:	0.0.0.0
-PORT: 5000
-MONGO_URI:	mongodb+srv://root:<password>@myfirstcluster-x0xst.mongodb.net/<dbname>?retryWrites=true&w=majority
-SECRET_KEY:	"your_secret_key"
-```
+
+Key | Value
+-----|------
+IP | 0.0.0.0
+PORT | 5000 
+MONGO_URI | mongodb+srv://root:<password>@myfirstcluster-x0xst.mongodb.net/<dbname>?retryWrites=true&w=majority
+SECRET_KEY | "your_secret_key"
+
 7: Click the deploy button on the Heroku dashboard.
 8: The site has been deployed to Heroku.
 
