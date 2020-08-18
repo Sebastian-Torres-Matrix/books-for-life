@@ -1,7 +1,7 @@
-## Testing
+# Testing
 :electric_plug:
 
-__Validators__
+### Validators
 
 * [W3C Markup Validation](https://validator.w3.org/)
     - Was used to check HTML5 validation.
@@ -24,9 +24,9 @@ https://search.google.com/test/mobile-friendly?hl=sv
 * [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools)
     - Was used to for debugging. 
 
-#### Features Testing
+## Features Testing
 
-__Sign up__ , __Login__ __and__ __Sign out__
+### Sign up , Login and Sign out
 * __Testing__ :mag: : User fills the form with required inputs and submits the form. Testing 
 that flash messages, redirection of page, werkzeug and connection to MongoDB works correctly. 
 * __Result__ :hammer: : The user can sign up, login and sign out from the website, by navigating
@@ -34,14 +34,14 @@ and using the forms and links.
 links
 * __Passed__ :white_check_mark: : Testing passed the expected criterias 
 
-__CRUD__
+### CRUD
 * __Testing__ :mag: : Users can add, edit, update and delete books from the gallery. 
 Testing that flash messages, python/flask syntax, modals, forms, redirection of page, connection to Mongo DB works correctly. 
 * __Result__ :hammer: : The user can add, edit, update books from the gallery by filling in a form.
 Users can also delete books by confirming on a modal, to delete a book.
 * __Passed__ :white_check_mark: : Testing passed the expected criterias 
 
-__Searchbox__
+### Searchbox
 * __Testing__ :mag: : Users can find a specific book, by typing in the searchbar and clicking on the button "search".
 Testing that connection to MongoDB and buttons reset/search works correctly.  
 * __Result__ :hammer: : searchbar works as expected. When searching for a book by typing for a specific book, the book
@@ -49,20 +49,21 @@ that the user search for, either is found or not. Also, reset button works, by r
 And connection to MongoDB works as expected.
 * __Passed__ :white_check_mark: : Testing passed the expected criterias
 
-__Social Media Icons__
+### Social Media Icons
 * __Testing__ :mag: : Users can use social media links to navigate to the websites specific social media account.
 Testing that by clicking on social media link, the user gets navigated to the chosen social media account.
 * __Result__ :hammer: : When clicking on social media icon, the user gets naviagated to the specific social media account. 
 * __Passed__ :white_check_mark: : Testing passed the expected criterias 
 
-__Responsive Design__
+### Responsive Design
 * __Testing__ :mag: : Users can use different devices to navigate on the website.
 Testing that the website works correctly on different devices and adjust on the responsive breakpoints.
 * __Result__ :hammer: : The website is responsive on the different devices breakpoints and works correctly.
 * __Passed__ :white_check_mark: : Testing passed the expected criterias 
 
-#### Bugs
-__Sidenavbar__
+## Bugs
+
+### Sidenavbar
 * __Bug__ :bug: : Side navbar was not working as expected. Menu icon was not showing up and when showing up
 nothing happened when clicking on the menu icon.  
 * __Resolved__ :key: : The bug was caused by having two different versions (1.0.0) of Materialize, when
@@ -72,27 +73,27 @@ resolving this bug by implementing the same versions of Materialize, the side na
 * __Passed__ :white_check_mark: :
 `code`
 
-__Responsive design__
+### Responsive design
 * __Bug__ :bug: : Had some bugs ith the responsive design and some parts of the pages, were crashing and
 did not follow the grid breakpoints 
 * __Resolved__ :key: : Started to implement and follow the [Materialize grid system](https://materializecss.com/grid.html) everywhere on the website, as I should
 have done from the beginning.
 * __Passed__ :white_check_mark: :
 
-__CRUD__
+### CRUD
 * __Bug__ :bug: : CRUD had some bugs along the way. Problems with connecting with MongoDB.
-* __Resolved__ :key: : Was able to solve the problem by using and follow the [MongoDB documentation](https://docs.mongodb.com/).
+* __Resolved__ :key: : Was able to solve the problem by using and following the [MongoDB documentation](https://docs.mongodb.com/).
 * __Passed__ :white_check_mark: 
 
-___Login, Signup, Sign out__
+### Login, Signup, Sign out
 * __Bug__ :bug: : Had several bugs with the process of login, sign up and sign out. Tried first with WTForms and
 was not able to make it work. Also connection with MongoDB was not working.
-* __Resolved__ :key: : Was able to solve the problem with the forms, by using [werkzeug documentation](https://jinja.palletsprojects.com/en/2.11.x/). 
+* __Resolved__ :key: : Was able to solve the problem with the forms, by using the [werkzeug documentation](https://jinja.palletsprojects.com/en/2.11.x/). 
 ```from werkzeug.security import generate_password_hash, check_password_hash```.
-Also figured out how to solve the syntax to connect properely to MongoDB, by the [MongoDB documentation](https://docs.mongodb.com/).
+Also figured out how to solve the syntax to connect properely to MongoDB, by using the [MongoDB documentation](https://docs.mongodb.com/).
 * __Passed__ :white_check_mark: 
 
-___Materialize__
+### Materialize
 * __Bug__ :bug: : jQuery code from Materialize, as side navbar, tooltip and modal was not working as expected. 
 * __Resolved__ :key: : The bug was caused by having two different versions (1.0.0) of Materialize, when
 resolving this bug by implementing the same versions of Materialize, all the jQuery code from Materialize worked correctly.

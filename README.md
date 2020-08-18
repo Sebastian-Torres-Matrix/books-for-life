@@ -12,18 +12,26 @@ Gain knowledge, grow and develop as a person with Books for Life :bulb:
 ## Table of Contents
 * [UX](#ux)
     * [Project Goals](#project-goals)
+    * [Site Owner Goals:](#site-owner-goals:)
     * [User Stories](#user-stories)
     * [Design Choices](#design-choices)
     * [Wireframes](#wireframes)
+    * [Databases](#databases)
 * [Features](#features)
     * [Existing Features](#existing-features)
     * [Features Left to Implement](#features-left-to-implement)
 * [Technologies Used](#technologies-used)
+    * [Languages](#languages)
+    * [Libaries & Frameworks](#libaries-&-frameworks)
+    * [Databases](#databases)
     * [Tools](#tools)
+    * [](#)
 
 * [Testing](#testing)
-
+ 
 * [Deployment](#deployment)
+    * [Clone Books for Life from Github](#clone-books-for-life-from-github:)
+    * [Deploying Books for Life to Heroku](#deploying-books-for-life-to-heroku:)
 
 * [Credits](#credits)
     * [Content](#content)
@@ -34,16 +42,16 @@ Gain knowledge, grow and develop as a person with Books for Life :bulb:
 
 ## UX 
 
-#### Project Goals :dart: 
+### Project Goals :dart: 
 The aim of the project is to create a book website where users can add/edit delete books from a book gallery, search and find books that they want to read, 
 save books that they already have read and also buy the books the users like through an affiliate link.
 
-#### Site Owner Goals:
+### Site Owner Goals:
 * Provide a platform for book lovers to find and add books they love
 * Earn money on each book purchased via a Amazon affiliate link from the website
 * Collect user information through site analytics to optimize the website for users
 
-#### User Stories :clapper: 
+### User Stories :clapper: 
 * :white_check_mark: I want to be able to search books for specific books
 * :white_check_mark: I want to see the book title, the authors name, some information about the book and a visual cover image of the book
 * :white_check_mark: I want to be able to buy the books i like
@@ -53,7 +61,7 @@ save books that they already have read and also buy the books the users like thr
 * :white_check_mark: I want to be able to sign out
 * :white_check_mark: I want the website to responsive on my laptop, iPad and mobile phone
 
-#### Design Choices :art:
+### Design Choices :art:
 
 __Icons__
 * Icons are being applied from [Font Awesome](https://fontawesome.com/) and [Materialize](https://materializecss.com/icons.html).
@@ -63,7 +71,7 @@ __Icons__
     * [Roboto](https://fonts.google.com/specimen/Roboto?query=roboto) is the primary font used throughout the project
     * Sans-serif was chosen as the fallback font
 
-__Colors__
+__Color scheme__
 * Brandy: [#dabe8f](http://chir.ag/projects/name-that-color/#DABE8F) 
 * White color: [#fff](http://chir.ag/projects/name-that-color/#FFFFFF)
 * Black color: [#000](http://chir.ag/projects/name-that-color/#000000) and rgba(0, 0, 0, 0.85)
@@ -72,11 +80,11 @@ __Colors__
 * Spring Leaves: [#528c59](http://chir.ag/projects/name-that-color/#528C59)
 * Fruit Salad: [#55995d](http://chir.ag/projects/name-that-color/#55995D)
 
-#### Wireframes
+### Wireframes
 * The wireframes were created using [Balsamiq](https://balsamiq.com/).
     * Here is the link to see the [Wireframes](https://github.com/Sebastian-Torres-Matrix/books-for-life/tree/master/wireframes)
 
-#### Databases
+### Databases
 
 __Users Collection__
 ID | Data Type
@@ -98,7 +106,7 @@ amazon_url | String
 
 ## Features :mag_right:
 
-#### Existing Features
+### Existing Features
 * Users can sign up to Books for Life, with a unique username and password
 * Users can log in to the website, with their unique username and password
 * Users can sign out from the website
@@ -109,7 +117,7 @@ amazon_url | String
 * Users can buy books through a Amazon link 
 * Users can follow Books for Life through social media, via social media icons
 
-#### Features Left to Implement
+### Features Left to Implement
 * The ability to sort books in the gallery
 * Choose books by genre
 * Upvote books or/and save books as favorites
@@ -120,22 +128,22 @@ amazon_url | String
 
 ## Technologies Used :computer: 
 
-#### Languages
+### Languages
 * HTML
 * CSS 
 * JavaScript 
 * Python
 
-#### Libaries & Frameworks
+### Libaries & Frameworks
 * [Flask](https://flask.palletsprojects.com/en/1.1.x/ ) 
 * [Materialize](https://materializecss.com/) 
 * [FontAwesome](https://fontawesome.com/)  
 * [JQuery](https://jquery.com/) 
 
-#### Databases
+### Databases
 * [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
 
-#### Tools :wrench:
+### Tools :wrench:
 * [Balsamiq](https://balsamiq.com/) 
 * [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) 
 * [Git](https://git-scm.com/) 
@@ -173,18 +181,18 @@ If you want to run this project locally, you can clone this repository from Gitb
 For more information about how to Git Clone, you can find it [here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
 ### Deploying Books for Life to Heroku:
-1: Create a requirements.txt file using the following command.
+1. Create a requirements.txt file using the following command.
 ```
 pip3 freeze > requirements.txt
 ```
-2: Create a Procfile with the following command.
+2. Create a Procfile with the following command.
 ```
 echo web: python3 app.py > Procfile
 ```
-3: Push these created files to your repository.
-4: Create a new app for this project on the Heroku Dashboard.
-5: Select your deployment method by clicking on the deployment method button and select GitHub.
-6: On the dashboard, set the following config variables:
+3. Push these created files to your repository.
+4. Create a new app for this project on the Heroku Dashboard.
+5. Select your deployment method by clicking on the deployment method button and select GitHub.
+6. On the dashboard, set the following config variables:
 
 Key | Value
 -----|------
@@ -193,13 +201,12 @@ PORT | 5000
 MONGO_URI | mongodb+srv://root:<password>@myfirstcluster-x0xst.mongodb.net/<dbname>?retryWrites=true&w=majority
 SECRET_KEY | "your_secret_key"
 
-7: Click the deploy button on the Heroku dashboard.
-8: The site has been deployed to Heroku.
-
+7. Click the deploy button on the Heroku dashboard.
+8. The site has been deployed to Heroku.
 
 ## Credits 
 
-#### Content
+### Content
 * These websites, for the excellent content, with explanations and tutorials:
     * [StackOverflow](https://stackoverflow.com/)
     * [W3Schools](https://www.w3schools.com/)
@@ -208,7 +215,7 @@ SECRET_KEY | "your_secret_key"
     * [Jinja Documentation](https://jinja.palletsprojects.com/en/2.11.x/) 
     * [Werkzeug Documentation](https://jinja.palletsprojects.com/en/2.11.x/) 
  
-#### Media
+### Media
 * [Favicon.io](https://favicon.io/)
     * For the favicon used in the project.
 * [Optimizilla](https://imagecompressor.com/)
@@ -216,7 +223,7 @@ SECRET_KEY | "your_secret_key"
 * [Pexels](https://www.pexels.com/photo/assorted-books-on-shelf-1370295/) 
     * For the embedded background image used in the project.
 
-#### Acknowledgements
+### Acknowledgements
 * Fellow Code Institute students on [Slack](https://slack.com/intl/en-se/). For the support and feedback.
 * Tutor support and Student care from Code Institute. For the support, guidance and feedback.
 * [Simen Daehlin](https://dehlin.dev/), for excellent mentorship, with great guidance and feedback. :trophy:
