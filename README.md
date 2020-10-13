@@ -12,7 +12,7 @@ Gain knowledge, grow and develop as a person with Books for Life :bulb:
 ## Table of Contents
 * [UX](#ux)
     * [Project Goals](#project-goals)
-    * [Site Owner Goals:](#site-owner-goals:)
+    * [Site Owner Goals:](#site-owner-goals)
     * [User Stories](#user-stories)
     * [Design Choices](#design-choices)
     * [Wireframes](#wireframes)
@@ -30,8 +30,8 @@ Gain knowledge, grow and develop as a person with Books for Life :bulb:
 * [Testing](#testing)
  
 * [Deployment](#deployment)
-    * [Clone Books for Life from Github](#clone-books-for-life-from-github:)
-    * [Deploying Books for Life to Heroku](#deploying-books-for-life-to-heroku:)
+    * [Clone Books for Life from Github](#clone-books-for-life-from-github)
+    * [Deploying Books for Life to Heroku](#deploying-books-for-life-to-heroku)
 
 * [Credits](#credits)
     * [Content](#content)
